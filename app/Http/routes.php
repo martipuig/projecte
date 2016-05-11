@@ -44,3 +44,11 @@ Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('categorias', 'categoriaController');
+
+Route::resource('categoriaEsps', 'categoria_espController');
+
+Route::resource('categoriaEsps', 'categoriaEspController');
+
+Route::resource('articles', 'articleController');
