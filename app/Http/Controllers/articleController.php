@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\categoriaController;
 
 class articleController extends AppBaseController
 {
@@ -43,7 +44,9 @@ class articleController extends AppBaseController
      */
     public function create()
     {
-        return view('articles.create');
+        $categories=\App\Models\categoria::lists('NomCat', 'id');
+        $categories_seleccionades=null;
+        return view('articles.create')->with('categories', $categories)->with('categories_seleccionades', $categories_seleccionades);
     }
 
     /**

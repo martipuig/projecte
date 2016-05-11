@@ -66,4 +66,9 @@ class categoria_esp extends Model
     public static $rules = [
         
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\categoria');
+    }
 }

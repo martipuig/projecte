@@ -43,7 +43,9 @@ class categoriaEspController extends AppBaseController
      */
     public function create()
     {
-        return view('categoriaEsps.create');
+        $categories=\App\Models\categoria::lists('NomCat', 'id');
+        $categories_seleccionades=null;
+        return view('categoriaEsps.create')->with('categories', $categories)->with('categories_seleccionades', $categories_seleccionades);
     }
 
     /**
