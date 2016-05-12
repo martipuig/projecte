@@ -43,7 +43,8 @@ class categoriaEspController extends AppBaseController
      */
     public function create()
     {
-        return view('categoriaEsps.create');
+        $categories=\App\Models\categoria::lists('NomCat', 'id');
+        return view('categoriaEsps.create')->with('categories', $categories);
     }
 
     /**
@@ -94,14 +95,14 @@ class categoriaEspController extends AppBaseController
     public function edit($id)
     {
         $categoriaEsp = $this->categoriaEspRepository->findWithoutFail($id);
+        $categories=\App\Models\categoria::lists('NomCat', 'id');
 
         if (empty($categoriaEsp)) {
             Flash::error('categoriaEsp not found');
 
             return redirect(route('categoriaEsps.index'));
         }
-
-        return view('categoriaEsps.edit')->with('categoriaEsp', $categoriaEsp);
+        return view('categoriaEsps.edit')->with('categoriaEsp', $categoriaEsp)->with('categories', $categories);
     }
 
     /**

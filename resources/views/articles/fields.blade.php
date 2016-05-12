@@ -1,30 +1,24 @@
 <!-- Nomart Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('NomArt', 'Nomart:') !!}
+    {!! Form::label('NomArt', 'Nom:') !!}
     {!! Form::text('NomArt', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Categoria Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('categoria_id', 'Categoria Id:') !!}
-    {!! Form::text('categoria_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('categoria_id','Categoria:') !!}
+    {!! Form::select('categoria_id', $categories, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Categoria Esps Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('categoria_esps_id', 'Categoria Esps Id:') !!}
-    {!! Form::text('categoria_esps_id', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Descripcio Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('descripcio', 'Descripcio:') !!}
-    {!! Form::text('descripcio', null, ['class' => 'form-control']) !!}
+    {!! Form::label('categoria_esps_id','Categoria específica:') !!}
+    {!! Form::select('categoria_esps_id', $categoriesEsp, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Unitat Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('unitat', 'Unitat:') !!}
+    {!! Form::label('unitat', 'Unitats:') !!}
     {!! Form::text('unitat', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -42,7 +36,7 @@
 
 <!-- Alcada Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('alcada', 'Alcada:') !!}
+    {!! Form::label('alcada', 'Alçada:') !!}
     {!! Form::text('alcada', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -64,16 +58,17 @@
     {!! Form::text('notes', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Usuarimod Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('usuariMod', 'Usuarimod:') !!}
-    {!! Form::text('usuariMod', null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Posicio Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('posicio', 'Posicio:') !!}
     {!! Form::text('posicio', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Descripcio Field -->
+<div class="form-group col-sm-12">
+    {!! Form::label('descripcio', 'Descripcio:') !!}
+    {!! Form::text('descripcio', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

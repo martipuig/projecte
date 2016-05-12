@@ -157,4 +157,14 @@ class article extends Model
     public static $rules = [
         
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo('App\Models\categoria');
+    }
+
+    public function categoriaEsp()
+    {
+        return $this->belongsTo('App\Models\categoriaEsp', 'categoria_esps_id');
+    }
 }

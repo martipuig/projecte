@@ -1,14 +1,14 @@
 <table class="table table-responsive" id="categoriaEsps-table">
     <thead>
-        <th>Nomesp</th>
-        <th>Categoria Id</th>
-        <th colspan="3">Action</th>
+        <th>Nom</th>
+        <th>Categoria</th>
+        <th colspan="3">Acció</th>
     </thead>
     <tbody>
     @foreach($categoriaEsps as $categoriaEsp)
         <tr>
             <td>{!! $categoriaEsp->NomEsp !!}</td>
-            <td>{!! $categoriaEsp->categoria_id !!}</td>
+            <td>{!! $categoriaEsp->categoria->NomCat !!}</td>
             <td>
                 {!! Form::open(['route' => ['categoriaEsps.destroy', $categoriaEsp->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
