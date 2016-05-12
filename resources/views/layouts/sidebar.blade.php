@@ -2,7 +2,7 @@
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
             <a href="#">
-                Infyom Generator
+                Bé de Preu
             </a>
         </li>
        @include('layouts.menu')
