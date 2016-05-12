@@ -38,6 +38,7 @@
 
         }
     </style>
+
 </head>
 <body id="app-layout">
 
@@ -128,6 +129,16 @@
         });
 
     </script>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.hiddenRow').hide();
+        })
+        $(".Fila_Article").click(function(){
+            $(this).next().toggle();
+        })
+    </script> 
+
 
     @yield('scripts')
 
