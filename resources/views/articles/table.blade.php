@@ -1,8 +1,8 @@
 <table class="table table-responsive" id="articles-table">
     <thead>
         <th>Nomart</th>
-        <th>Categoria Id</th>
-        <th>Categoria Esps Id</th>
+        <th>Categoria</th>
+        <th>Categoria Específica</th>
         <th>Descripcio</th>
         <th>Unitat</th>
         <th>Amplada</th>
@@ -19,8 +19,8 @@
     @foreach($articles as $article)
         <tr>
             <td>{!! $article->NomArt !!}</td>
-            <td>{!! $article->categoria_id !!}</td>
-            <td>{!! $article->categoria_esps_id !!}</td>
+            <td>{!! $article->categoria->NomCat !!}</td>
+            <td>{!! $article->categoriaEsp->NomEsp !!}</td>
             <td>{!! $article->descripcio !!}</td>
             <td>{!! $article->unitat !!}</td>
             <td>{!! $article->amplada !!}</td>

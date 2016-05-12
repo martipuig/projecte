@@ -158,8 +158,13 @@ class article extends Model
         
     ];
 
-    public function categories()
+    public function categoria()
     {
-        return $this->belongsToMany('App\Models\categoria');
+        return $this->belongsTo('App\Models\categoria');
+    }
+
+    public function categoriaEsp()
+    {
+        return $this->belongsTo('App\Models\categoriaEsp', 'categoria_esps_id');
     }
 }

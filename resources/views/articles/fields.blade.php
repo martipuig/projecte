@@ -6,14 +6,14 @@
 
 <!-- Categoria Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('categoria','Categoria:') !!}
-    {!! Form::select('categories', $categories, $categories_seleccionades, ['class' => 'form-control']) !!}
+    {!! Form::label('categoria_id','Categoria:') !!}
+    {!! Form::select('categoria_id', $categories, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Categoria Esps Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('categoria_esps_id', 'Categoria Esps Id:') !!}
-    {!! Form::text('categoria_esps_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('categoria_esps_id','Categoria específica:') !!}
+    {!! Form::select('categoria_esps_id', $categoriesEsp, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Unitat Field -->

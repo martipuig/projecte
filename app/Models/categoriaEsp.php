@@ -73,4 +73,9 @@ class categoriaEsp extends Model
     public static $rules = [
         
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo('App\Models\categoria');
+    }
 }
