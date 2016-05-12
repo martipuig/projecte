@@ -45,7 +45,8 @@ class articleController extends AppBaseController
     {
         $categories=\App\Models\categoria::lists('NomCat', 'id');
         $categoriesEsp=\App\Models\categoriaEsp::lists('NomEsp', 'id');
-        return view('articles.create')->with('categories', $categories)->with('categoriesEsp', $categoriesEsp);
+        $estats=array("No venut"=>"No venut", "Venut"=>"Venut", "Reservat"=>"Reservat");
+        return view('articles.create')->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats);
     }
 
     /**
@@ -98,13 +99,14 @@ class articleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
         $categories=\App\Models\categoria::lists('NomCat', 'id');
         $categoriesEsp=\App\Models\categoriaEsp::lists('NomEsp', 'id');
+        $estats=array("No venut"=>"No venut", "Venut"=>"Venut", "Reservat"=>"Reservat");
 
         if (empty($article)) {
             Flash::error('article not found');
 
             return redirect(route('articles.index'));
         }
-        return view('articles.edit')->with('article', $article)->with('categories', $categories)->with('categoriesEsp', $categoriesEsp);
+        return view('articles.edit')->with('article', $article)->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats);
     }
 
     /**
