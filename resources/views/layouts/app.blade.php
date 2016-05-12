@@ -22,6 +22,8 @@
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
 
+    <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <style type="text/css">
         .sidebar-nav li.active > a,
         .sidebar-nav li > a:focus {
@@ -56,8 +58,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    InfyOm Generator
+                <a class="navbar-brand" href="{{ url('/login') }}">
+                    Bé De Preu
                 </a>
             </div>
 
@@ -90,7 +92,7 @@
 
             @if (!Auth::guest())
                 <span class="pull-right" style="margin-right: 10px;margin-top: 15px"><a href="{{ url('/logout') }}"><i
-                                class="fa fa-btn fa-sign-out"></i>Logout</a></span>
+                                class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></span>
             @endif
         </header>
     </div>
@@ -119,6 +121,9 @@
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Temes propis -->
+    <link href="../css/styles.css" rel='stylesheet' type='text/css'>
 
     <script>
 
