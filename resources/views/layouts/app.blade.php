@@ -85,21 +85,22 @@
         </div>
     </nav>
 @else
-    <div id="wrapper" class="">
+    <!-- Tota la part comentada mostra el sidebar de l'esquerra -->
+    <!-- <div id="wrapper" class=""> -->
         <!-- Sidebar -->
-            @include('layouts.sidebar')
+            <!-- @include('layouts.sidebar') -->
         <!-- /#sidebar-wrapper -->
         <header class="header">
-            <a href="#menu-toggle"
+            {{-- <a href="#menu-toggle"
                style="margin-top: 8px;margin-left: 5px;background-color: #E7E7E7;border-color: #E7E7E7"
-               class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+               class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a> --}}
 
             @if (!Auth::guest())
                 <span class="pull-right" style="margin-right: 10px;margin-top: 15px"><a href="{{ url('/logout') }}"><i
                                 class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></span>
             @endif
         </header>
-    </div>
+    <!-- </div> -->
     @endif
 
     <!-- Page Content -->

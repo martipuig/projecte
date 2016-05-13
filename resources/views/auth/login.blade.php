@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<br><br><br><br>
 <div class="container">
     <div class="pull-left text-center">
         <h1>Bé De Preu</h1>
     </div>
+    <br><br><br><br><br><br><br><br><br>
     <div class="row pull-right">
         <div class="col-md-12">
             <div class="panel panel-default"> {{-- Recuadre que envolta el login --}}
