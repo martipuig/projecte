@@ -1,3 +1,9 @@
+<div>&nbsp;</div>
+
+<input class="search form-control" placeholder="Buscar" id="searchTerm" type="text">
+
+<div>&nbsp;</div>
+
 <table class="table table-responsive" id="articles-table">
     <thead>
         <th>Nom</th>
@@ -8,7 +14,9 @@
         <tr class="Fila_Article">
             <td>{!! $article->NomArt !!}</td>
             <td>{!! $article->preu !!}</td>  
-            <tr class="hiddenRow">
+            <td style="display:none;">{{!! $article->descripcio !!}}</td>
+       </tr>
+       <tr class="hiddenRow">
                 <td colspan="2">
                     <div class="container">
                         {{ $article->descripcio }}
@@ -22,7 +30,6 @@
                     </div>
                 </td>
             </tr>
-       </tr>
     @endforeach
     </tbody>
 </table>
