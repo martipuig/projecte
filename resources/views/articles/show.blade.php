@@ -4,6 +4,6 @@
     @include('articles.show_fields')
 
     <div class="form-group">
-           <a href="{!! route('articles.index') !!}" class="btn btn-default">Back</a>
+           <a href="{!! route('articles.index') !!}" class="btn btn-default">Tornar</a>
     </div>
 @endsection

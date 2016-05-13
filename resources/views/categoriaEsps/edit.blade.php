@@ -3,7 +3,7 @@
 @section('content')
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="pull-left">Edit categoriaEsp</h1>
+                <h1 class="pull-left">Editar Categoria Específica</h1>
             </div>
         </div>
 

@@ -6,7 +6,7 @@
 
 <!-- Nomcat Field -->
 <div class="form-group">
-    {!! Form::label('NomCat', 'Nomcat:') !!}
+    {!! Form::label('NomCat', 'Nom:') !!}
     <p>{!! $categoria->NomCat !!}</p>
 </div>
 
