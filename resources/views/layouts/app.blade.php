@@ -22,8 +22,6 @@
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
 
-    <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
-
     <style type="text/css">
         .sidebar-nav li.active > a,
         .sidebar-nav li > a:focus {
@@ -126,9 +124,6 @@
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-
-    <!-- Temes propis -->
-    <link href="../css/styles.css" rel='stylesheet' type='text/css'>
 
     <script>
 
