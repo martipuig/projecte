@@ -55,31 +55,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/login') }}">
-                    Bé De Preu
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/articles') }}">Articles</a></li>
-                    <li><a href="{{ url('/categorias') }}">Categoria</a></li>
-                    <li><a href="{{ url('/categoriaEsps') }}">Categoria Esp</a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @endif
-                </ul>
-            </div>
         </div>
     </nav>
 @else
@@ -89,18 +64,39 @@
             <!-- @include('layouts.sidebar') -->
         <!-- /#sidebar-wrapper -->
         <header class="header">
-            {{-- <a href="#menu-toggle"
-               style="margin-top: 8px;margin-left: 5px;background-color: #E7E7E7;border-color: #E7E7E7"
-               class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a> --}}
 
-            @if (!Auth::guest())
-                <span class="pull-right" style="margin-right: 10px;margin-top: 15px"><a href="{{ url('/logout') }}"><i
-                                class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></span>
-            @endif
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="{{ url('/login') }}">
+                        Bé De Preu
+                    </a>
+                </div>
+                    {{-- <a href="#menu-toggle"
+                       style="margin-top: 8px;margin-left: 5px;background-color: #E7E7E7;border-color: #E7E7E7"
+                       class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a> --}}
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            <li><a href="{{ url('/articles') }}">Articles</a></li>
+                            <li><a href="{{ url('/categorias') }}">Categoria</a></li>
+                            <li><a href="{{ url('/categoriaEsps') }}">Categoria Esp</a></li>
+                        </ul>
+
+                        <!-- Right Side Of Navbar -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- Authentication Links -->
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+
         </header>
     <!-- </div> -->
-    @endif
-
+@endif
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
@@ -161,8 +157,6 @@
             }
         });        
     </script>
-
     @yield('scripts')
-
 </body>
 </html>

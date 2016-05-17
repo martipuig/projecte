@@ -28,10 +28,19 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
     });
 });
 
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/home', 'HomeController@index');
+	Route::resource('categorias', 'categoriaController');
+	Route::resource('categoriaEsps', 'categoria_espController');
+	Route::resource('categoriaEsps', 'categoriaEspController');
+	Route::resource('articles', 'articleController');
+	Route::get('logout', 'Auth\AuthController@logout');
+
+});
 
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('logout', 'Auth\AuthController@logout');
 
 // Registration Routes...
 Route::get('register', 'Auth\AuthController@getRegister');
@@ -42,13 +51,3 @@ Route::get('password/reset', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
-
-Route::get('/home', 'HomeController@index');
-
-Route::resource('categorias', 'categoriaController');
-
-Route::resource('categoriaEsps', 'categoria_espController');
-
-Route::resource('categoriaEsps', 'categoriaEspController');
-
-Route::resource('articles', 'articleController');
