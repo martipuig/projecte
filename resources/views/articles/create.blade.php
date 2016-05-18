@@ -10,7 +10,7 @@
     @include('core-templates::common.errors')
 
     <div class="row">
-        {!! Form::open(['route' => 'articles.store']) !!}
+        {!! Form::open(['route' => 'articles.store', 'files'=>true]) !!}
 
             @include('articles.fields')
 

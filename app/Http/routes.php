@@ -52,3 +52,10 @@ Route::resource('categoriaEsps', 'categoria_espController');
 Route::resource('categoriaEsps', 'categoriaEspController');
 
 Route::resource('articles', 'articleController');
+
+// Imatges
+Route::get('list', 'PictureController@showPictureList');
+Route::get('pic/{id}', 'PictureController@showPicture');
+Route::get('resize/{id}', 'PictureController@showPictureResize');
+Route::get('add', 'PictureController@addPicture');
+Route::post('add', 'PictureController@savePicture');
