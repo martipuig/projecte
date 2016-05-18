@@ -153,7 +153,7 @@ class articleController extends AppBaseController
 
         $this->articleRepository->delete($id);
 
-        Flash::success('article deleted successfully.');
+        Flash::success('S\'ha borrat correctament l\'article');
 
         return redirect(route('articles.index'));
     }

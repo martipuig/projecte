@@ -125,6 +125,9 @@
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
 
+    <script src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+    <script src="http://www.pengoworks.com/workshop/jquery/tablesorter/jquery.tablesorter.mod.js"></script>
+
     <script>
 
         $("#menu-toggle").click(function (e) {
@@ -134,32 +137,21 @@
 
     </script>
 
+    <script>
+        $(document).ready(function(){ 
+                $("#articles-table").tablesorter( {sortList: [[0,0], [1,0]]} ); 
+            } 
+        );  
+    </script>
+
     <script type="text/javascript">
         $(function(){
-            $('.hiddenRow').hide();
-            $('.hiddenRow').css('background-color','#E0E0E0');
+            $('.expand-child').hide();
+            $('.expand-child').css('background-color','#E0E0E0');
         })
         $(".Fila_Article").click(function(){
             $(this).next().toggle();
         })
-    </script> 
-
-    <script type="text/javascript">
-        $(".search").keyup(function(){
-            _this = this;
-            $.each($(".table tbody tr"), function() {
-                if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
-                   $(this).hide();
-                else
-                   $(this).show();                
-            });
-            var asd = $(".search").val().length;
-            if(asd == 0){
-                $(function(){
-                    $('.hiddenRow').hide();
-                })
-            }
-        });        
     </script>
 
     @yield('scripts')
