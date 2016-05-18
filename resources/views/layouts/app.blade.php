@@ -22,8 +22,6 @@
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
 
-    <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
-
     <style type="text/css">
         .sidebar-nav li.active > a,
         .sidebar-nav li > a:focus {
@@ -57,51 +55,48 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/login') }}">
-                    Bé De Preu
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/articles') }}">Llista articles</a></li>
-                        <li><a href="{{ url('/categorias') }}">Categoria</a></li>
-                        <li><a href="{{ url('/categoriaEsps') }}">Categoria Especifica</a></li>
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @endif
-                </ul>
-            </div>
         </div>
     </nav>
 @else
-    <div id="wrapper" class="">
+    <!-- Tota la part comentada mostra el sidebar de l'esquerra -->
+    <!-- <div id="wrapper" class=""> -->
         <!-- Sidebar -->
-            @include('layouts.sidebar')
+            <!-- @include('layouts.sidebar') -->
         <!-- /#sidebar-wrapper -->
         <header class="header">
-            <a href="#menu-toggle"
-               style="margin-top: 8px;margin-left: 5px;background-color: #E7E7E7;border-color: #E7E7E7"
-               class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
-            @if (!Auth::guest())
-                <span class="pull-right" style="margin-right: 10px;margin-top: 15px"><a href="{{ url('/logout') }}"><i
-                                class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></span>
-            @endif
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="{{ url('/login') }}">
+                        Bé De Preu
+                    </a>
+                </div>
+                    {{-- <a href="#menu-toggle"
+                       style="margin-top: 8px;margin-left: 5px;background-color: #E7E7E7;border-color: #E7E7E7"
+                       class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a> --}}
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            <li><a href="{{ url('/articles') }}">Articles</a></li>
+                            <li><a href="{{ url('/categorias') }}">Categoria</a></li>
+                            <li><a href="{{ url('/categoriaEsps') }}">Categoria Esp</a></li>
+                        </ul>
+
+                        <!-- Right Side Of Navbar -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- Authentication Links -->
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+
         </header>
-    </div>
-    @endif
-
+    <!-- </div> -->
+@endif
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
@@ -126,9 +121,6 @@
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
 
-    <!-- Temes propis -->
-    <link href="../css/styles.css" rel='stylesheet' type='text/css'>
-
     <script>
 
         $("#menu-toggle").click(function (e) {
@@ -141,14 +133,30 @@
     <script type="text/javascript">
         $(function(){
             $('.hiddenRow').hide();
+            $('.hiddenRow').css('background-color','#E0E0E0');
         })
         $(".Fila_Article").click(function(){
             $(this).next().toggle();
         })
     </script> 
 
-
+    <script type="text/javascript">
+        $(".search").keyup(function(){
+            _this = this;
+            $.each($(".table tbody tr"), function() {
+                if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                   $(this).hide();
+                else
+                   $(this).show();                
+            });
+            var asd = $(".search").val().length;
+            if(asd == 0){
+                $(function(){
+                    $('.hiddenRow').hide();
+                })
+            }
+        });        
+    </script>
     @yield('scripts')
-
 </body>
 </html>

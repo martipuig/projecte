@@ -1,6 +1,6 @@
 <!-- Nomcat Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('NomCat', 'Nomcat:') !!}
+    {!! Form::label('NomCat', 'Nom:') !!}
     {!! Form::text('NomCat', null, ['class' => 'form-control']) !!}
 </div>
 
