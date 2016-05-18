@@ -51,6 +51,15 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
+
+// Imatges
+Route::get('list', 'PictureController@showPictureList');
+Route::get('pic/{id}', 'PictureController@showPicture');
+Route::get('resize/{id}', 'PictureController@showPictureResize');
+Route::get('add', 'PictureController@addPicture');
+Route::post('add', 'PictureController@savePicture');
+
+
 //Ruta de index
 
 Route::get('index', 'indexController@index');

@@ -12,6 +12,13 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\categoriaController;
 
+use App\Picture;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use Image;
+
 class articleController extends AppBaseController
 {
     /** @var  articleRepository */
@@ -32,6 +39,12 @@ class articleController extends AppBaseController
     {
         $this->articleRepository->pushCriteria(new RequestCriteria($request));
         $articles = $this->articleRepository->all();
+        // foreach($articles as $article){
+        //     foreach($article->imatges as $a){
+        //         var_dump($a->name);
+        //         echo "<br>";
+        //     }
+        // }
        return view('articles.index')
             ->with('articles', $articles);
     }
@@ -59,8 +72,31 @@ class articleController extends AppBaseController
     public function store(CreatearticleRequest $request)
     {
         $input = $request->all();
+        //var_dump($request["imatge"]);
 
         $article = $this->articleRepository->create($input);
+        $idArticle = $article->id;
+
+        if(isset($input["imatge"]) && $input["imatge"][0]!=null){
+            foreach($input["imatge"] as $imatge){
+                var_dump($imatge);
+                $img = Image::make($imatge);
+                $img2 = Image::make($imatge);
+                $img2->resize(200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+                Response::make($img->encode('jpeg'));
+                Response::make($img2->encode('jpeg'));
+                
+                $picture = new Picture;
+                $picture->name = preg_replace('/\\.[^.\\s]{3,4}$/', '', $imatge->getClientOriginalName());
+                $picture->pic = $img;
+                $picture->picResize = $img2;
+                $picture->article()->associate($article);
+                $picture->save();
+            }
+        }
 
         Flash::success('article saved successfully.');
 
@@ -84,6 +120,11 @@ class articleController extends AppBaseController
             return redirect(route('articles.index'));
         }
 
+            // foreach($article->imatges as $a){
+            //     var_dump($a->name);
+            //     echo "<br>";
+            // }
+        
         return view('articles.show')->with('article', $article);
     }
 
