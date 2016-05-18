@@ -30,7 +30,6 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/home', 'HomeController@index');
 	Route::resource('categorias', 'categoriaController');
 	Route::resource('categoriaEsps', 'categoria_espController');
 	Route::resource('categoriaEsps', 'categoriaEspController');
@@ -51,3 +50,7 @@ Route::get('password/reset', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+//Ruta de index
+
+Route::get('index', 'indexController@index');
