@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-
+    <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
           type='text/css'>
@@ -22,23 +22,6 @@
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
 
-    <style type="text/css">
-        .sidebar-nav li.active > a,
-        .sidebar-nav li > a:focus {
-            text-decoration: none;
-            color: #fff;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .header {
-            width: 100%;
-            background: #e7e7e7;
-            color: #fff;
-            height: 50px;
-
-        }
-    </style>
-
 </head>
 <body id="app-layout">
 
@@ -46,7 +29,9 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-
+                <a class="navbar-brand" href="{{ url('/login') }}">
+                        Bé De Preu
+                </a>
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#app-navbar-collapse">
@@ -55,31 +40,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/login') }}">
-                    Bé De Preu
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/articles') }}">Articles</a></li>
-                    <li><a href="{{ url('/categorias') }}">Categoria</a></li>
-                    <li><a href="{{ url('/categoriaEsps') }}">Categoria Esp</a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @endif
-                </ul>
-            </div>
         </div>
     </nav>
 @else
@@ -89,20 +49,41 @@
             <!-- @include('layouts.sidebar') -->
         <!-- /#sidebar-wrapper -->
         <header class="header">
-            {{-- <a href="#menu-toggle"
-               style="margin-top: 8px;margin-left: 5px;background-color: #E7E7E7;border-color: #E7E7E7"
-               class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a> --}}
 
-            @if (!Auth::guest())
-                <span class="pull-right" style="margin-right: 10px;margin-top: 15px"><a href="{{ url('/logout') }}"><i
-                                class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></span>
-            @endif
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="{{ url('/login') }}">
+                        Bé De Preu
+                    </a>
+                </div>
+                    {{-- <a href="#menu-toggle"
+                       style="margin-top: 8px;margin-left: 5px;background-color: #E7E7E7;border-color: #E7E7E7"
+                       class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a> --}}
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            <li><a href="{{ url('/articles') }}">Articles</a></li>
+                            <li><a href="{{ url('/categorias') }}">Categoria</a></li>
+                            <li><a href="{{ url('/categoriaEsps') }}">Categoria Esp</a></li>
+                        </ul>
+
+                        <!-- Right Side Of Navbar -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- Authentication Links -->
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Tancar Sessió</a></li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+
         </header>
     <!-- </div> -->
-    @endif
-
+@endif
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+    <div class="centrat">
 
         <div class="container-fluid">
 
@@ -116,14 +97,11 @@
     <!-- /#page-content-wrapper -->
 
     <script src="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/js/jquery.js"></script>
-    <script src="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/js/bootstrap.min.js"></script>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
 
     <script src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
     <script src="http://www.pengoworks.com/workshop/jquery/tablesorter/jquery.tablesorter.mod.js"></script>
@@ -153,8 +131,6 @@
             $(this).next().toggle();
         })
     </script>
-
     @yield('scripts')
-
 </body>
 </html>

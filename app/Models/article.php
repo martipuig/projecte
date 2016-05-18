@@ -167,4 +167,8 @@ class article extends Model
     {
         return $this->belongsTo('App\Models\categoriaEsp', 'categoria_esps_id');
     }
+
+    public function imatges(){
+        return $this->hasMany('App\Picture');
+    }
 }

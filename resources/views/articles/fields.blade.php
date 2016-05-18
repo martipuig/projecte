@@ -13,7 +13,7 @@
 <!-- Imatge Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('imatge', 'Imatge:') !!}
-    {!! Form::text('imatge', null, ['class' => 'form-control']) !!}
+    {!! Form::file('imatge[]', ['multiple'=>'multiple'])  !!}      
 </div>
 
 <!-- Categoria Esps Id Field -->

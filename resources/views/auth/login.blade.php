@@ -19,6 +19,9 @@
                 <div data-p="225.00" style="display: none;">
                     <img data-u="image" src="img/slider1.jpg" />
                 </div>
+                <div data-p="225.00" style="display: none;">
+                    <img data-u="image" src="img/slider2.jpg" />
+                </div>
             
             </div>
             <!-- Bullet Navigator -->
