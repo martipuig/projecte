@@ -79,7 +79,6 @@ class articleController extends AppBaseController
 
         if(isset($input["imatge"]) && $input["imatge"][0]!=null){
             foreach($input["imatge"] as $imatge){
-                var_dump($imatge);
                 $img = Image::make($imatge);
                 $img2 = Image::make($imatge);
                 $img2->resize(200, null, function ($constraint) {
@@ -169,6 +168,35 @@ class articleController extends AppBaseController
         }
 
         $article = $this->articleRepository->update($request->all(), $id);
+
+        $input=$request->all();
+        if(isset($input["idFotosEliminar"])) {
+            foreach($input["idFotosEliminar"] as $idImatge) {
+                $imatge=\App\Picture::find($idImatge);
+                $imatge->delete();
+            }
+        }
+
+        $idArticle = $article->id;
+        if(isset($input["imatge"]) && $input["imatge"][0]!=null){
+            foreach($input["imatge"] as $imatge){
+                $img = Image::make($imatge);
+                $img2 = Image::make($imatge);
+                $img2->resize(200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+                Response::make($img->encode('jpeg'));
+                Response::make($img2->encode('jpeg'));
+                
+                $picture = new Picture;
+                $picture->name = preg_replace('/\\.[^.\\s]{3,4}$/', '', $imatge->getClientOriginalName());
+                $picture->pic = $img;
+                $picture->picResize = $img2;
+                $picture->article()->associate($article);
+                $picture->save();
+            }
+        }
 
         Flash::success('article updated successfully.');
 

@@ -10,7 +10,7 @@
         @include('core-templates::common.errors')
 
         <div class="row">
-            {!! Form::model($article, ['route' => ['articles.update', $article->id], 'method' => 'patch']) !!}
+            {!! Form::model($article, ['route' => ['articles.update', $article->id], 'method' => 'patch', 'files'=>true]) !!}
 
             @include('articles.fields')
 
