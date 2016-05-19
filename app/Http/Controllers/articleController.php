@@ -98,7 +98,7 @@ class articleController extends AppBaseController
             }
         }
 
-        Flash::success('article saved successfully.');
+        Flash::success('L\'article s\'ha guardat correctament');
 
         return redirect(route('articles.index'));
     }
@@ -115,7 +115,7 @@ class articleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }
@@ -143,7 +143,7 @@ class articleController extends AppBaseController
         $estats=array("No venut"=>"No venut", "Venut"=>"Venut", "Reservat"=>"Reservat");
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }
@@ -163,14 +163,14 @@ class articleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }
 
         $article = $this->articleRepository->update($request->all(), $id);
 
-        Flash::success('article updated successfully.');
+        Flash::success('L\'article s\'ha actualitzat correctament');
 
         return redirect(route('articles.index'));
     }
@@ -187,7 +187,7 @@ class articleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }

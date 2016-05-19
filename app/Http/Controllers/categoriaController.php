@@ -59,7 +59,7 @@ class categoriaController extends AppBaseController
 
         $categoria = $this->categoriaRepository->create($input);
 
-        Flash::success('categoria saved successfully.');
+        Flash::success('La categoria s\'ha guardat correctament');
 
         return redirect(route('categorias.index'));
     }
@@ -76,7 +76,7 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }
@@ -96,7 +96,7 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }
@@ -117,14 +117,14 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }
 
         $categoria = $this->categoriaRepository->update($request->all(), $id);
 
-        Flash::success('categoria updated successfully.');
+        Flash::success('La categoria s\'ha actualitzat correctament.');
 
         return redirect(route('categorias.index'));
     }
@@ -141,14 +141,14 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }
 
         $this->categoriaRepository->delete($id);
 
-        Flash::success('categoria deleted successfully.');
+        Flash::success('La categoria s\'ha borrat correctament');
 
         return redirect(route('categorias.index'));
     }

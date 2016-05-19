@@ -5,17 +5,18 @@
 <script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
 <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 
+
 <div class="container">
     <div class="pull-left text-center">
         <h1>Bé De Preu</h1>
 
-        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
+        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 500px; height: 300px; overflow: hidden; visibility: hidden;">
             <!-- Loading Screen -->
             <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
                 <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 45%; height: 45%;"></div>
                 <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:45%;height:45%;"></div>
             </div>
-            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
+            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 500px; height: 300px; overflow: hidden;">
                 <div data-p="225.00" style="display: none;">
                     <img data-u="image" src="img/slider1.jpg" />
                 </div>
@@ -39,8 +40,8 @@
     </div>
 
 
-    <br><br><br><br><br><br><br><br><br>
-    <div class="row pull-right">
+    <div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+    <div class="pull-right">
         <div class="col-md-12">
             <div class="panel panel-default"> {{-- Recuadre que envolta el login --}}
                 <div class="panel-heading">Login</div>

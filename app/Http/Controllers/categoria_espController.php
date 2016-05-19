@@ -59,7 +59,7 @@ class categoria_espController extends AppBaseController
 
         $categoriaEsp = $this->categoriaEspRepository->create($input);
 
-        Flash::success('categoria_esp saved successfully.');
+        Flash::success('La categoria específica s\'ha guardat correctament');
 
         return redirect(route('categoriaEsps.index'));
     }
@@ -76,7 +76,7 @@ class categoria_espController extends AppBaseController
         $categoriaEsp = $this->categoriaEspRepository->findWithoutFail($id);
 
         if (empty($categoriaEsp)) {
-            Flash::error('categoria_esp not found');
+            Flash::error('No s\'ha trobat cap categoria específica');
 
             return redirect(route('categoriaEsps.index'));
         }
@@ -96,7 +96,7 @@ class categoria_espController extends AppBaseController
         $categoriaEsp = $this->categoriaEspRepository->findWithoutFail($id);
 
         if (empty($categoriaEsp)) {
-            Flash::error('categoria_esp not found');
+            Flash::error('No s\'ha trobat cap categoria específica');
 
             return redirect(route('categoriaEsps.index'));
         }
@@ -117,14 +117,14 @@ class categoria_espController extends AppBaseController
         $categoriaEsp = $this->categoriaEspRepository->findWithoutFail($id);
 
         if (empty($categoriaEsp)) {
-            Flash::error('categoria_esp not found');
+            Flash::error('No s\'ha trobat cap categoria específica');
 
             return redirect(route('categoriaEsps.index'));
         }
 
         $categoriaEsp = $this->categoriaEspRepository->update($request->all(), $id);
 
-        Flash::success('categoria_esp updated successfully.');
+        Flash::success('S\'ha actualitzat la categoria específica correctament');
 
         return redirect(route('categoriaEsps.index'));
     }
@@ -141,14 +141,14 @@ class categoria_espController extends AppBaseController
         $categoriaEsp = $this->categoriaEspRepository->findWithoutFail($id);
 
         if (empty($categoriaEsp)) {
-            Flash::error('categoria_esp not found');
+            Flash::error('No s\'ha trobat cap categoria específica');
 
             return redirect(route('categoriaEsps.index'));
         }
 
         $this->categoriaEspRepository->delete($id);
 
-        Flash::success('categoria_esp deleted successfully.');
+        Flash::success('La categoria específica s\'ha borrat correctament');
 
         return redirect(route('categoriaEsps.index'));
     }

@@ -9,24 +9,15 @@
     height: 50px;
 }
 
+@media (min-width: 1200px){
+    .container {
+        width: 970px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (min-width: 1400px){
+    .container {
+        width: 1170px;
+}
 
 /*CSS de slider*/
 .jssorb05 {
