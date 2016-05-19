@@ -38,6 +38,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+
+Route::get('/ajax-subcat/{id}', 'articleController@ajax');
+
+
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@postLogin');
 

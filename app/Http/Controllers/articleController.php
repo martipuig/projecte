@@ -11,6 +11,7 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\categoriaController;
+use App\categoriaEspController;
 
 use App\Picture;
 use App\Http\Controllers\Controller;
@@ -197,5 +198,13 @@ class articleController extends AppBaseController
         Flash::success('article deleted successfully.');
 
         return redirect(route('articles.index'));
+    }
+
+    public function ajax($cat_id){
+
+        // print_r($cat_id);
+        $categoriesEsp = \App\Models\categoriaEsp::where('categoria_id', $cat_id)->lists('NomEsp', 'id');
+        // var_dump($categoriesEsp);
+        return Response::json($categoriesEsp);
     }
 }
