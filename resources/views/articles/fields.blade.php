@@ -19,7 +19,7 @@
 <!-- Categoria Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('categoria_id','Categoria:') !!}
-    {!! Form::select('categoria_id', $categories, null, ['class' => 'form-control']) !!}
+    {!! Form::select('categoria_id', $categories, null, ['class' => 'form-control', 'id' => 'cat']) !!}
 </div>
 
 <!-- Imatge Field -->
@@ -29,9 +29,10 @@
 </div>
 
 <!-- Categoria Esps Id Field -->
+
 <div class="form-group col-sm-6">
     {!! Form::label('categoria_esps_id','Categoria específica:') !!}
-    {!! Form::select('categoria_esps_id', $categoriesEsp, null, ['class' => 'form-control', 'id' => 'selectCatEsp']) !!}
+    {!! Form::select('categoria_esps_id', $categoriesEsp, null, ['class' => 'form-control', 'id' => 'catesp']) !!}
 </div>
 
 <!-- Unitat Field -->
@@ -107,3 +108,23 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{!! route('articles.index') !!}" class="btn btn-default">Cancel</a>
 </div>
+
+
+<script>
+    selecatesp($('#catesp').val());
+    $('#cat').on('change', function(e){
+        var cat_id = e.target.value;
+        selecatesp(cat_id);
+    });
+
+    function selecatesp(cat_id){
+        $('#catesp').empty();
+        $.get('../ajax-subcat/' + cat_id, function(dades){
+            console.log(dades);
+            $.each(dades, function(index, subcat){
+                $('#catesp').append('<option value="'+index+'">'+subcat+'</option>');
+            })
+        });
+    };
+
+</script>

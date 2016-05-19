@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-
+    <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
           type='text/css'>
@@ -21,23 +21,7 @@
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
-
-    <style type="text/css">
-        .sidebar-nav li.active > a,
-        .sidebar-nav li > a:focus {
-            text-decoration: none;
-            color: #fff;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .header {
-            width: 100%;
-            background: #e7e7e7;
-            color: #fff;
-            height: 50px;
-
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 </head>
 <body id="app-layout">
@@ -46,7 +30,9 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-
+                <a class="navbar-brand" href="{{ url('/login') }}">
+                        Bé De Preu
+                </a>
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#app-navbar-collapse">
@@ -98,7 +84,7 @@
     <!-- </div> -->
 @endif
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+    <div class="centrat">
 
         <div class="container-fluid">
 
@@ -112,14 +98,9 @@
     <!-- /#page-content-wrapper -->
 
     <script src="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/js/jquery.js"></script>
-    <script src="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/js/bootstrap.min.js"></script>
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
 
     <script>
 
