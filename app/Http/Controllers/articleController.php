@@ -202,9 +202,7 @@ class articleController extends AppBaseController
 
     public function ajax($cat_id){
 
-        // print_r($cat_id);
         $categoriesEsp = \App\Models\categoriaEsp::where('categoria_id', $cat_id)->lists('NomEsp', 'id');
-        // var_dump($categoriesEsp);
         return Response::json($categoriesEsp);
     }
 }
