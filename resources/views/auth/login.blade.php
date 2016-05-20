@@ -10,39 +10,7 @@
     <div class="pull-left text-center">
         <h1>Bé De Preu</h1>
 
-        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 500px; height: 300px; overflow: hidden; visibility: hidden;">
-            <!-- Loading Screen -->
-            <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 45%; height: 45%;"></div>
-                <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:45%;height:45%;"></div>
-            </div>
-            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 500px; height: 300px; overflow: hidden;">
-                <div data-p="225.00" style="display: none;">
-                    <img data-u="image" src="img/slider1.jpg" />
-                </div>
-                <div data-p="225.00" style="display: none;">
-                    <img data-u="image" src="img/slider2.jpg" />
-                </div>
-            
-            </div>
-            <!-- Bullet Navigator -->
-            <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
-                <!-- bullet navigator item prototype -->
-                <div data-u="prototype" style="width:16px;height:16px;"></div>
-            </div>
-            <!-- Arrow Navigator -->
-            <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
-            <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
-        </div>
-        <script>
-            jssor_1_slider_init();
-        </script>
-    </div>
-
-
-    <div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-    <div class="pull-right">
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
             <div class="panel panel-default"> {{-- Recuadre que envolta el login --}}
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -100,6 +68,5 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
 @endsection

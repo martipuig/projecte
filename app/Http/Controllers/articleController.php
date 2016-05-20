@@ -80,7 +80,6 @@ class articleController extends AppBaseController
 
         if(isset($input["imatge"]) && $input["imatge"][0]!=null){
             foreach($input["imatge"] as $imatge){
-                var_dump($imatge);
                 $img = Image::make($imatge);
                 $img2 = Image::make($imatge);
                 $img2->resize(200, null, function ($constraint) {
@@ -171,8 +170,39 @@ class articleController extends AppBaseController
 
         $article = $this->articleRepository->update($request->all(), $id);
 
-        Flash::success('L\'article s\'ha actualitzat correctament');
 
+
+        $input=$request->all();
+        if(isset($input["idFotosEliminar"])) {
+            foreach($input["idFotosEliminar"] as $idImatge) {
+                $imatge=\App\Picture::find($idImatge);
+                $imatge->delete();
+            }
+        }
+
+        $idArticle = $article->id;
+        if(isset($input["imatge"]) && $input["imatge"][0]!=null){
+            foreach($input["imatge"] as $imatge){
+                $img = Image::make($imatge);
+                $img2 = Image::make($imatge);
+                $img2->resize(200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+                Response::make($img->encode('jpeg'));
+                Response::make($img2->encode('jpeg'));
+                
+                $picture = new Picture;
+                $picture->name = preg_replace('/\\.[^.\\s]{3,4}$/', '', $imatge->getClientOriginalName());
+                $picture->pic = $img;
+                $picture->picResize = $img2;
+                $picture->article()->associate($article);
+                $picture->save();
+            }
+        }
+
+        Flash::success('L\'article s\'ha actualitzat correctament');
+        
         return redirect(route('articles.index'));
     }
 
@@ -201,8 +231,17 @@ class articleController extends AppBaseController
     }
 
     public function ajax($cat_id){
-
         $categoriesEsp = \App\Models\categoriaEsp::where('categoria_id', $cat_id)->lists('NomEsp', 'id');
         return Response::json($categoriesEsp);
+    }
+
+    public function multidestroy(request $request){
+        $articleMarcat = $request->input('ArticleBorrar');
+
+        for($i=0;$i<count($articleMarcat);$i++){
+            DB::table('articles')->where('id', '=', $articleMarcat[$i])->delete();
+        }
+
+        return $articleMarcat;
     }
 }

@@ -1,3 +1,15 @@
+@if(Auth::check()) 
+    {{ Form::hidden('usuariMod', Auth::user()->name) }}
+@endif
+
+@if(isset($article))
+    <div class="container">
+        @foreach ($article->imatges as $imatge)
+            <img src="../../resize/{{ $imatge->id }}" class="img-thumbnail" width="100" id="{{ $imatge->id }}" onclick="eliminarImatge(this)">
+        @endforeach
+    </div>
+@endif
+
 <!-- Nomart Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('NomArt', 'Nom:') !!}
@@ -12,7 +24,7 @@
 
 <!-- Imatge Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('imatge', 'Imatge:') !!}
+    {!! Form::label('imatge', 'Imatges:') !!}
     {!! Form::file('imatge[]', ['multiple'=>'multiple'])  !!}      
 </div>
 
