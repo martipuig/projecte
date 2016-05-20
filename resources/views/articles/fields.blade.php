@@ -108,23 +108,3 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{!! route('articles.index') !!}" class="btn btn-default">Cancel</a>
 </div>
-
-
-<script>
-    selecatesp($('#catesp').val());
-    $('#cat').on('change', function(e){
-        var cat_id = e.target.value;
-        selecatesp(cat_id);
-    });
-
-    function selecatesp(cat_id){
-        $('#catesp').empty();
-        $.get('../ajax-subcat/' + cat_id, function(dades){
-            console.log(dades);
-            $.each(dades, function(index, subcat){
-                $('#catesp').append('<option value="'+index+'">'+subcat+'</option>');
-            })
-        });
-    };
-
-</script>
