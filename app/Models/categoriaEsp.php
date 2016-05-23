@@ -52,7 +52,8 @@ class categoriaEsp extends Model
 
     public $fillable = [
         'NomEsp',
-        'categoria_id'
+        'categoria_id',
+        'usuariMod'
     ];
 
     /**
@@ -62,7 +63,8 @@ class categoriaEsp extends Model
      */
     protected $casts = [
         'NomEsp' => 'string',
-        'categoria_id' => 'integer'
+        'categoria_id' => 'integer',
+        'usuariMod' => 'string'
     ];
 
     /**

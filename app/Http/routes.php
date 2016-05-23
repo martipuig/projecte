@@ -67,3 +67,6 @@ Route::post('add', 'PictureController@savePicture');
 //Ruta de index
 
 Route::get('index', 'indexController@index');
+
+// Canvis
+Route::get('canvis', 'canvisController@obtenirCanvis');

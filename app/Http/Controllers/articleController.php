@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Image;
+use DB;
 
 class articleController extends AppBaseController
 {
@@ -98,7 +99,7 @@ class articleController extends AppBaseController
             }
         }
 
-        Flash::success('article saved successfully.');
+        Flash::success('Article guardat correctament.');
 
         return redirect(route('articles.index'));
     }
@@ -139,7 +140,7 @@ class articleController extends AppBaseController
     {
         $article = $this->articleRepository->findWithoutFail($id);
         $categories=\App\Models\categoria::lists('NomCat', 'id');
-        $categoriesEsp=\App\Models\categoriaEsp::lists('NomEsp', 'id');
+        $categoriesEsp=\App\Models\categoriaEsp::where('categoria_id', $article->categoria_id)->lists('NomEsp', 'id');
         $estats=array("No venut"=>"No venut", "Venut"=>"Venut", "Reservat"=>"Reservat");
 
         if (empty($article)) {
@@ -147,6 +148,7 @@ class articleController extends AppBaseController
 
             return redirect(route('articles.index'));
         }
+
         return view('articles.edit')->with('article', $article)->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats);
     }
 
@@ -199,7 +201,7 @@ class articleController extends AppBaseController
             }
         }
 
-        Flash::success('article updated successfully.');
+        Flash::success('Article actualitzat correctament.');
 
         return redirect(route('articles.index'));
     }
@@ -221,9 +223,13 @@ class articleController extends AppBaseController
             return redirect(route('articles.index'));
         }
 
+        foreach($article->imatges as $imatge) {
+            $imatge->delete();
+        }
+
         $this->articleRepository->delete($id);
 
-        Flash::success('article deleted successfully.');
+        Flash::success('Article eliminat correctament.');
 
         return redirect(route('articles.index'));
     }

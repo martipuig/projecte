@@ -59,7 +59,7 @@ class categoriaController extends AppBaseController
 
         $categoria = $this->categoriaRepository->create($input);
 
-        Flash::success('categoria saved successfully.');
+        Flash::success('Categoria guardada correctament.');
 
         return redirect(route('categorias.index'));
     }
@@ -124,7 +124,7 @@ class categoriaController extends AppBaseController
 
         $categoria = $this->categoriaRepository->update($request->all(), $id);
 
-        Flash::success('categoria updated successfully.');
+        Flash::success('Categoria actualitzada correctament.');
 
         return redirect(route('categorias.index'));
     }
@@ -148,7 +148,7 @@ class categoriaController extends AppBaseController
 
         $this->categoriaRepository->delete($id);
 
-        Flash::success('categoria deleted successfully.');
+        Flash::success('Categoria eliminada correctament.');
 
         return redirect(route('categorias.index'));
     }
