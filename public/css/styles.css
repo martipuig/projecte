@@ -1,6 +1,7 @@
 .centrat{
     width: 70%;
     margin: auto;
+
 }
 .header {
     width: 100%;
@@ -9,15 +10,53 @@
     height: 50px;
 }
 
+html {
+    margin: 0;
+height: 100%;
+}
+
+body {
+    background: rgba(79,79,79,1);
+    background: -moz-linear-gradient(top, rgba(79,79,79,1) 0%, rgba(77,77,77,1) 47%, rgba(74,74,74,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(79,79,79,1)), color-stop(47%, rgba(77,77,77,1)), color-stop(100%, rgba(74,74,74,1)));
+    background: -webkit-linear-gradient(top, rgba(79,79,79,1) 0%, rgba(77,77,77,1) 47%, rgba(74,74,74,1) 100%);
+    background: -o-linear-gradient(top, rgba(79,79,79,1) 0%, rgba(77,77,77,1) 47%, rgba(74,74,74,1) 100%);
+    background: -ms-linear-gradient(top, rgba(79,79,79,1) 0%, rgba(77,77,77,1) 47%, rgba(74,74,74,1) 100%);
+    background: linear-gradient(to bottom, rgba(79,79,79,1) 0%, rgba(77,77,77,1) 47%, rgba(74,74,74,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f4f4f', endColorstr='#4a4a4a', GradientType=0 );
+}
+
+.fons {
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+    width: 450px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+}
+
 @media (min-width: 1200px){
     .container {
-        width: 970px;
+        width: 900px;
+
 }
 
 @media (min-width: 1400px){
     .container {
         width: 1170px;
 }
+
+
 
 /*CSS de slider*/
 .jssorb05 {

@@ -236,7 +236,7 @@ class articleController extends AppBaseController
     }
 
     public function multidestroy(request $request){
-        $articleMarcat = $request->input('ArticleBorrar');
+        $articleMarcat = Input::get('Marcats');
 
         for($i=0;$i<count($articleMarcat);$i++){
             DB::table('articles')->where('id', '=', $articleMarcat[$i])->delete();
