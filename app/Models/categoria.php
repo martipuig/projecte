@@ -40,7 +40,8 @@ class categoria extends Model
 
 
     public $fillable = [
-        'NomCat'
+        'NomCat',
+        'usuariMod'
     ];
 
     /**
@@ -49,7 +50,8 @@ class categoria extends Model
      * @var array
      */
     protected $casts = [
-        
+        'NomCat' => 'string',
+        'usuariMod' => 'string'
     ];
 
     /**

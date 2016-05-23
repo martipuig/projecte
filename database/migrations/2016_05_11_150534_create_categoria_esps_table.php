@@ -18,6 +18,7 @@ class CreateCategoriaEspsTable extends Migration
             $table->string('NomEsp');
             $table->integer('categoria_id')->unsigned();
             $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->string('usuariMod',16);
             $table->timestamps();
             $table->softDeletes();
         });

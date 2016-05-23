@@ -1,3 +1,7 @@
+@if(Auth::check()) 
+    {{ Form::hidden('usuariMod', Auth::user()->name) }}
+@endif
+
 <!-- Nomcat Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('NomCat', 'Nom:') !!}
