@@ -5,7 +5,7 @@
 @if(isset($article))
     <div class="container">
         @foreach ($article->imatges as $imatge)
-            <img src="../../resize/{{ $imatge->id }}" class="img-thumbnail" width="100" id="{{ $imatge->id }}" onclick="eliminarImatge(this)">
+            <img src="../../resize/{{ $imatge->id }}" class="img-rounded" height="100" id="{{ $imatge->id }}" onclick="eliminarImatge(this)">
         @endforeach
     </div>
 @endif
@@ -105,6 +105,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('articles.index') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('articles.index') !!}" class="btn btn-default">Cancel·lar</a>
 </div>

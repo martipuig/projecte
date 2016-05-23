@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <h1 class="pull-left">Categorías Específica</h1>
+        <h1 class="pull-left">Categories Específiques</h1>
         <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('categoriaEsps.create') !!}">Crear Categoria Esp</a>
 
         <div class="clearfix"></div>

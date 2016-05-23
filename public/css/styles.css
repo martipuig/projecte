@@ -117,4 +117,12 @@ body {
     text-decoration: none;
     color: #fff;
     background: rgba(255, 255, 255, 0.2);
+<<<<<<< HEAD
 }
+=======
+}
+
+.img-rounded {
+    margin-bottom: 6px;
+}
+>>>>>>> 4556f4f226b0c1c0b5bb0c2759c8d4f05c66c3a1

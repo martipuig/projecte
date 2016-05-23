@@ -14,7 +14,7 @@
 
             @include('articles.fields')
             <script>
-                selecatesp($('#catesp').val());
+                selecatesp($('#cat').val());
                 $('#cat').on('change', function(e){
                     var cat_id = e.target.value;
                     selecatesp(cat_id);

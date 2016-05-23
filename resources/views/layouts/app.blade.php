@@ -68,6 +68,7 @@
                             <li><a href="{{ url('/articles') }}">Articles</a></li>
                             <li><a href="{{ url('/categorias') }}">Categoria</a></li>
                             <li><a href="{{ url('/categoriaEsps') }}">Categoria Esp</a></li>
+                            <li><a href="{{ url('/canvis') }}">Canvis</a></li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
