@@ -3,18 +3,22 @@
     margin: auto;
 
 }
+
 .header {
     width: 100%;
     background: #e7e7e7;
     color: #fff;
     height: 50px;
 }
+
 #ampladaslider{
     width: 64%;
 }
+
 #ampladanovetats{
     width: 30%;
 }
+
 #mesinformacio{
     color: #E65710;
     text-decoration: none;
@@ -24,10 +28,10 @@
     padding: 0px 0px;
 }
 
-html {
+/*html {
     margin: 0;
     height: 100%;
-}
+}*/
 
 /*body {
     background: rgba(79,79,79,1);
@@ -59,17 +63,7 @@ html {
     border: 0px solid #000000;
 }
 
-@media (min-width: 1200px){
-    .container {
-        width: 900px;
 
-}
-
-@media (min-width: 1400px){
-    .container {
-        width: 1170px;
-}
-=======
 #producte{
     width: 250px;
     height: 250px;
@@ -78,6 +72,7 @@ html {
     margin-right: 40px;
     margin-top: 20px;
 }
+
 #productefinal{
     width: 250px;
     height: 250px;
@@ -85,6 +80,7 @@ html {
     float: left;
     margin-top: 20px;
 }
+
 body{
     font-size: 12px;
 }
@@ -162,7 +158,6 @@ body{
     color: #fff;
     background: rgba(255, 255, 255, 0.2);
 }
-
 
 /*CSS jquery productes index*/
 
