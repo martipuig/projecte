@@ -125,7 +125,8 @@ class article extends Model
         'estat',
         'notes',
         'usuariMod',
-        'posicio'
+        'posicio',
+        'mostrar'
     ];
 
     /**
@@ -146,7 +147,8 @@ class article extends Model
         'estat' => 'string',
         'notes' => 'string',
         'usuariMod' => 'string',
-        'posicio' => 'integer'
+        'posicio' => 'integer',
+        'mostrar' => 'string'
     ];
 
     /**
