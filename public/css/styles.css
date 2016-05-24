@@ -24,7 +24,6 @@
     padding: 0px 0px;
 }
 
-<<<<<<< HEAD
 html {
     margin: 0;
     height: 100%;
@@ -103,20 +102,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
->>>>>>> 0a28b92e99f185811d6869b6c843894486c2fca7
-
-
-
 /*CSS de slider*/
 .jssorb05 {
     position: absolute;
@@ -178,7 +163,7 @@ body{
     background: rgba(255, 255, 255, 0.2);
 }
 
-<<<<<<< HEAD
+
 /*CSS jquery productes index*/
 
 li,a,img,ul,div,span {
@@ -188,6 +173,7 @@ li,a,img,ul,div,span {
     padding: 0;
     vertical-align: baseline;
 }
+
 .llistaproductes { list-style: none; margin: 20px; }
 .llistaproductes li {
     display: inline-block; position: relative; color: #eee; cursor: pointer; text-shadow: 1px 1px rgba(0,0,0,0.3); margin-bottom: 3%; }
