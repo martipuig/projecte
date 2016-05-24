@@ -85,6 +85,12 @@
     {!! Form::select('estat', $estats, null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Mostrar Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('mostrar', 'Mostrar:') !!}
+    {!! Form::select('mostrar', $mostrar, null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Posicio Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('posicio', 'Posicio:') !!}
