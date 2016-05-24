@@ -34,7 +34,7 @@
 	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <br><br>
 	<div class="container">
-	    <div class="pull-left text-center">
+	    <div class="pull-left text-center" id="ampladaslider">
 	        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
 	            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
 	                <div data-p="225.00" style="display: none;">
@@ -58,20 +58,50 @@
 	            jssor_1_slider_init();
 	        </script>
 	    </div>
-	    <div class="row pull-right">
+	    <div class="row pull-right" id="ampladanovetats">
 	        <div class="col-md-12">
 	            <div class="panel panel-default"> {{-- Recuadre que envolta el login --}}
 	                <div class="panel-heading">Ultimes Novetats</div>
 	                <div class="panel-body">
 	            		<ul class="nav navbar-nav">
+	            			<b>Xiaomi mi5</b>
+	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
+	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            			<li><b>Xiaomi mi5</b></li>
-	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-	            			<li><b>Xiaomi mi5</b></li>
-	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
+	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            		</ul>
 	                </div>
 	            </div>
 	        </div>
 	    </div>
+	</div>
+	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">Productes</div>
+			<div class="panel-body">
+				<ul class="llistaproductes">
+				  @foreach($articles as $article)
+					  @foreach($article->imatges as $key => $imatge)
+						  @if($key == 0)
+							<li>
+						      <a href=""><img src="resize/{{ $imatge->id }}" id="producte" alt="" /></a>
+						      <div class="content">
+						          <div class="contentinner">
+						              <div>
+						                  <span class="price">{!! $article->preu !!}</span>
+						                  <a href="" class="title">{!! $article->NomArt !!}</a>
+						              </div>
+						              <p class="desc">{!! $article->descripcio !!}</p>
+						          </div>
+						      </div>
+						  	</li>
+						@endif
+						@endforeach
+					@endforeach
+				</ul>
+			</div>
+		</div>
 	</div>
 @endsection
