@@ -11,6 +11,13 @@ use App\Repositories\articleRepository;
 
 class indexController extends AppBaseController {
 
+	private $articleRepository;
+	
+	public function __construct(articleRepository $articleRepo)
+    {
+        $this->articleRepository = $articleRepo;
+    }
+
     public function index(Request $request)
     {
         $this->articleRepository->pushCriteria(new RequestCriteria($request));

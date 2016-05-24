@@ -83,18 +83,22 @@
 			<div class="panel-body">
 				<ul class="llistaproductes">
 				  @foreach($articles as $article)
-					  <li>
-					      <a href=""><img src="img/aixeta.jpg" id="producte" alt="aixeta" /></a>
-					      <div class="content">
-					          <div class="contentinner">
-					              <div>
-					                  <span class="price">{!! $article->preu !!}</span>
-					                  <a href="" class="title">{!! $article->NomArt !!}</a>
-					              </div>
-					              <p class="desc">{!! $article->descripcio !!}</p>
-					          </div>
-					      </div>
-					  </li>
+					  @foreach($article->imatges as $key => $imatge)
+						  @if($key == 0)
+							<li>
+						      <a href=""><img src="resize/{{ $imatge->id }}" id="producte" alt="" /></a>
+						      <div class="content">
+						          <div class="contentinner">
+						              <div>
+						                  <span class="price">{!! $article->preu !!}</span>
+						                  <a href="" class="title">{!! $article->NomArt !!}</a>
+						              </div>
+						              <p class="desc">{!! $article->descripcio !!}</p>
+						          </div>
+						      </div>
+						  	</li>
+						@endif
+						@endforeach
 					@endforeach
 				</ul>
 			</div>
