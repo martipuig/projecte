@@ -32,6 +32,7 @@ class CreatearticlesTable extends Migration
             $table->integer('posicio');
             $table->timestamps();
             $table->softDeletes();
+            $table->string('mostrar',3);
         });
     }
 

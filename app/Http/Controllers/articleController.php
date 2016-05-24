@@ -42,9 +42,10 @@ class articleController extends AppBaseController
         $this->articleRepository->pushCriteria(new RequestCriteria($request));
         $articles = $this->articleRepository->all();
         // foreach($articles as $article){
-        //     foreach($article->imatges as $a){
-        //         var_dump($a->name);
-        //         echo "<br>";
+        //     foreach ($article->imatges as $key => $imatge) {
+        //         if($key==0) {
+        //             echo $imatge->name . "<br>";
+        //         }
         //     }
         // }
        return view('articles.index')
@@ -61,7 +62,8 @@ class articleController extends AppBaseController
         $categories=\App\Models\categoria::lists('NomCat', 'id');
         $categoriesEsp=\App\Models\categoriaEsp::lists('NomEsp', 'id');
         $estats=array("No venut"=>"No venut", "Venut"=>"Venut", "Reservat"=>"Reservat");
-        return view('articles.create')->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats);
+        $mostrar=array("Sí"=>"Sí", "No"=>"No");
+        return view('articles.create')->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats)->with('mostrar', $mostrar);
     }
 
     /**
@@ -142,6 +144,7 @@ class articleController extends AppBaseController
         $categories=\App\Models\categoria::lists('NomCat', 'id');
         $categoriesEsp=\App\Models\categoriaEsp::where('categoria_id', $article->categoria_id)->lists('NomEsp', 'id');
         $estats=array("No venut"=>"No venut", "Venut"=>"Venut", "Reservat"=>"Reservat");
+        $mostrar=array("Sí"=>"Sí", "No"=>"No");
 
         if (empty($article)) {
             Flash::error('No s\'ha trobat cap article');
@@ -149,7 +152,7 @@ class articleController extends AppBaseController
             return redirect(route('articles.index'));
         }
 
-        return view('articles.edit')->with('article', $article)->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats);
+        return view('articles.edit')->with('article', $article)->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats)->with('mostrar', $mostrar);
     }
 
     /**
