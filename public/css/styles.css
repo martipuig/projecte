@@ -129,7 +129,6 @@ body{
     background: rgba(255, 255, 255, 0.2);
 }
 
-<<<<<<< HEAD
 /*CSS jquery productes index*/
 
 li,a,img,ul,div,span {
@@ -152,8 +151,7 @@ li,a,img,ul,div,span {
 .llistaproductes li .price { color: #fff; font-weight: bold; float: right; }
 .llistaproductes li .by { font-size: 12px; font-style: italic; margin-top:8px; }
 .llistaproductes li .desc { font-size: 12px; margin: 5px 0; line-height: 16px; }
-=======
+
 .img-rounded {
     margin-bottom: 6px;
 }
->>>>>>> 4556f4f226b0c1c0b5bb0c2759c8d4f05c66c3a1
