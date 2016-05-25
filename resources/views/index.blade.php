@@ -76,15 +76,21 @@
 	        </div>
 	    </div>
 	</div>
+	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
+<<<<<<< HEAD
 	<div class="container" id="movilcontainer">
+=======
+	<script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
+	<div class="container">
+>>>>>>> 4cf5c2e2120ef782e499514535220b461f08b11e
 		<div class="panel panel-default">
 			<div class="panel-heading">Productes</div>
 			<div class="panel-body">
 				<ul class="llistaproductes">
 				  @foreach($articles as $article)
 					  @foreach($article->imatges as $key => $imatge)
-						  @if($key == 0)
+						@if($key == 0)
 							<li>
 						      <a href=""><img src="resize/{{ $imatge->id }}" id="producte" alt="" /></a>
 						      <div class="content">
@@ -101,12 +107,18 @@
 						@endforeach
 					@endforeach
 				</ul>
+				{!! $articles->links() !!}
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 	<footer class="footer">
 		<div class="container">
 			<p>Aparcao</p>
 		</div>
 	</footer>
 @endsection
+=======
+@endsection
+
+>>>>>>> 4cf5c2e2120ef782e499514535220b461f08b11e

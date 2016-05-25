@@ -76,7 +76,7 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }
@@ -96,7 +96,7 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }
@@ -117,7 +117,7 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }
@@ -141,7 +141,7 @@ class categoriaController extends AppBaseController
         $categoria = $this->categoriaRepository->findWithoutFail($id);
 
         if (empty($categoria)) {
-            Flash::error('categoria not found');
+            Flash::error('No s\'ha trobat cap categoria');
 
             return redirect(route('categorias.index'));
         }

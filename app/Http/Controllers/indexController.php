@@ -21,7 +21,7 @@ class indexController extends AppBaseController {
     public function index(Request $request)
     {
         $this->articleRepository->pushCriteria(new RequestCriteria($request));
-        $articles = $this->articleRepository->all();
+        $articles = $this->articleRepository->paginate(6);
         // foreach($articles as $article){
         //     foreach($article->imatges as $a){
         //         var_dump($a->name);
