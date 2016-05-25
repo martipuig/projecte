@@ -85,7 +85,7 @@ class articleController extends AppBaseController
             foreach($input["imatge"] as $imatge){
                 $img = Image::make($imatge);
                 $img2 = Image::make($imatge);
-                $img2->resize(200, null, function ($constraint) {
+                $img2->resize(250, null, function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 });

@@ -79,8 +79,11 @@
 	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.min.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
 	<div class="container" id="movilcontainer">
+<<<<<<< HEAD
 	<script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
 	<div class="container">
+=======
+>>>>>>> 5d0e0c65cc81f487fcc21d605720a8a2fe041bbc
 		<div class="panel panel-default">
 			<div class="panel-heading">Productes</div>
 			<div class="panel-body">

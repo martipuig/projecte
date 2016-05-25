@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('categoriaEsps', 'categoriaEspController');
 	Route::resource('articles', 'articleController');
 	Route::get('logout', 'Auth\AuthController@logout');
-
+	Route::get('canvis', 'canvisController@obtenirCanvis');
 });
 
 
@@ -70,5 +70,4 @@ Route::post('add', 'PictureController@savePicture');
 Route::get('index', 'indexController@index');
 Route::resource('index', 'indexController');
 
-// Canvis
-Route::get('canvis', 'canvisController@obtenirCanvis');
+

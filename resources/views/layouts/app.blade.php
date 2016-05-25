@@ -8,7 +8,6 @@
     <title>Laravel</title>
     <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <!-- Fonts -->
-        <script src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
           type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
@@ -23,7 +22,7 @@
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+    <script src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
 </head>
 <body id="app-layout">
 
@@ -129,6 +128,7 @@
             $(this).next().toggle();
         })
     </script>
+    <script type="text/javascript" src="{{ URL::asset('js/jquery.infinitescroll.min.js') }}"></script>
     <script type="text/javascript">
         $(".search").keyup(function(){
             _this = this;

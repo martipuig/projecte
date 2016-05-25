@@ -35,5 +35,6 @@
 @yield('header')
 @yield('SliderIUltimesNovetats')
 
+<script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 </body>
 </html>
