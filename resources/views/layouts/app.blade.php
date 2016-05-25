@@ -138,6 +138,7 @@
             }
         });        
     </script>
+    <script type="text/javascript" src="{{ URL::asset('js/jquery.infinitescroll.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
     @yield('scripts')
 </body>
