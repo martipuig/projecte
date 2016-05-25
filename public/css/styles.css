@@ -1,7 +1,6 @@
 .centrat{
     width: 70%;
     margin: auto;
-
 }
 
 .header {
@@ -85,6 +84,7 @@
     .container {
         width: 900px;
     }
+}
 
 @media (min-width: 1400px){
     .container {
@@ -96,19 +96,23 @@
     .container {
         width: 100%;
     }
+
     #ampladaslider{
         width: 100%;
         float: none!important;
     }
+
     #ampladanovetats{
         width: 100%;
         margin-left: -30px;
         margin-top: 15px;
         display: none;
     }
+
     .col-md-12{
         margin-left: -30px;
     }
+
     #movilcontainer{
         margin-top: 15px;
     }
@@ -204,8 +208,6 @@ li,a,img,ul,div,span {
 .img-rounded {
     margin-bottom: 6px;
 }
-
-
 
 .footer{
     height: 60px;
