@@ -21,7 +21,7 @@
        <tr class="expand-child Fila_Articles">
                 <td colspan="2">
                     <div>&nbsp;</div>
-                    <div class="container text-center">
+                    <div class="text-center">
                         {{ $article->descripcio }}
                     </div>
                        {{-- {!! Form::open(['route' => ['articles.destroy', $article->id], 'method' => 'delete']) !!} --}}
@@ -39,29 +39,3 @@
     {!! Form::close() !!}
     </tbody>
 </table>
-<script type="text/javascript">
-$("input:checkbox").change(function() {
-    var Obj={};
-    Obj.Marcats=[];
-    Obj.NoMarcats=[];
-
-    $("input:checkbox").each(function(){
-        var $this = $(this);
-
-        if($this.is(":checked")){
-            Obj.Marcats.push($this.attr("id"));
-        }else{
-            Obj.NoMarcats.push($this.attr("id"));
-        }
-            
-    });
-    $.ajax({
-        type: "POST",
-        url: "{{URL::to('/multidestroy')}}",
-        data: Obj.Marcats,
-        success: function( result ) {
-            console.log( result ); //please post output of this
-        }
-    });
-});
-</script>

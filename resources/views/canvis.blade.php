@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <div class="container">
     	<h1 class="pull-left">Historial de canvis</h1>
-    	<table class="table table-responsive" id="articles-table">
+    	<table class="table table-responsive" id="canvis-table">
     		<thead>
 		        <th>Nom</th>
 		        <th>Tipus</th>
