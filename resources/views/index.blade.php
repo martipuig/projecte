@@ -77,7 +77,7 @@
 	    </div>
 	</div>
 	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
-	<div class="container">
+	<div class="container" id="movilcontainer">
 		<div class="panel panel-default">
 			<div class="panel-heading">Productes</div>
 			<div class="panel-body">
@@ -104,4 +104,9 @@
 			</div>
 		</div>
 	</div>
+	<footer class="footer">
+		<div class="container">
+			<p>Aparcao</p>
+		</div>
+	</footer>
 @endsection

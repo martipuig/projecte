@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
     	<h1 class="pull-left">Historial de canvis</h1>
-    	<table class="table table-responsive" id="articles-table">
+    	<table class="table table-responsive" id="canvis-table">
     		<thead>
 		        <th>Nom</th>
 		        <th>Tipus</th>
