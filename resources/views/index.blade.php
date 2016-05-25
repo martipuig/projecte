@@ -108,10 +108,10 @@
 			</div>
 		</div>
 	</div>
+</div>
 	<footer class="footer">
 		<div class="container">
 			<p>Aparcao</p>
 		</div>
 	</footer>
-@endsection
 @endsection
