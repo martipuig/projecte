@@ -76,7 +76,7 @@
 	        </div>
 	    </div>
 	</div>
-	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.js') !!}"></script>
+	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.min.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
 	<div class="container" id="movilcontainer">
 	<script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
@@ -109,9 +109,10 @@
 		</div>
 	</div>
 </div>
-	<footer class="footer">
-		<div class="container">
-			<p>Aparcao</p>
-		</div>
-	</footer>
+<footer class="footer">
+	<div class="container">
+		<p>Aparcao</p>
+	</div>
+</footer>
 @endsection
+

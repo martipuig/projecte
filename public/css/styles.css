@@ -5,9 +5,9 @@
 }
 
 .header {
-    width: 100%;
-    background: #e7e7e7;
-    color: #fff;
+    /*width: 100%;*/
+   /* background: #e7e7e7;
+    color: #fff;*/
     height: 50px;
 }
 
@@ -61,8 +61,8 @@
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+    box-shadow: 10px 10px 5px #888888
 }
-
 
 #producte{
     width: 250px;
@@ -86,6 +86,7 @@
         width: 900px;
     }
 }
+
 @media (min-width: 1400px){
     .container {
         width: 1170px;
