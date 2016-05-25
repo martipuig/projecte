@@ -118,7 +118,7 @@ class articleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }
@@ -147,7 +147,7 @@ class articleController extends AppBaseController
         $mostrar=array("Sí"=>"Sí", "No"=>"No");
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }
@@ -168,12 +168,14 @@ class articleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }
 
         $article = $this->articleRepository->update($request->all(), $id);
+
+
 
         $input=$request->all();
         if(isset($input["idFotosEliminar"])) {
@@ -221,7 +223,7 @@ class articleController extends AppBaseController
         $article = $this->articleRepository->findWithoutFail($id);
 
         if (empty($article)) {
-            Flash::error('article not found');
+            Flash::error('No s\'ha trobat cap article');
 
             return redirect(route('articles.index'));
         }
@@ -232,16 +234,24 @@ class articleController extends AppBaseController
 
         $this->articleRepository->delete($id);
 
+
         Flash::success('Article eliminat correctament.');
 
         return redirect(route('articles.index'));
     }
 
     public function ajax($cat_id){
-
-        // print_r($cat_id);
         $categoriesEsp = \App\Models\categoriaEsp::where('categoria_id', $cat_id)->lists('NomEsp', 'id');
-        // var_dump($categoriesEsp);
         return Response::json($categoriesEsp);
+    }
+
+    public function multidestroy(request $request){
+        $articleMarcat = Input::get('Marcats');
+
+        for($i=0;$i<count($articleMarcat);$i++){
+            DB::table('articles')->where('id', '=', $articleMarcat[$i])->delete();
+        }
+
+        return $articleMarcat;
     }
 }
