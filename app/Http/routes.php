@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/ajax-subcat/{id}', 'articleController@ajax');
 Route::post('/multidestroy', 'articleController@multidestroy');
+Route::get('/destroy/{id}', 'articleController@destroy');
 
 
 Route::get('login', 'Auth\AuthController@getLogin');
