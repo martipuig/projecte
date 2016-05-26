@@ -246,12 +246,21 @@ class articleController extends AppBaseController
     }
 
     public function multidestroy(request $request){
-        $articleMarcat = Input::get('Marcats');
+        $input=$request->all();
+        var_dump($input["ArticleBorrar"]);
 
-        for($i=0;$i<count($articleMarcat);$i++){
-            DB::table('articles')->where('id', '=', $articleMarcat[$i])->delete();
+        if(isset($input["ArticleBorrar"])) {
+            foreach($input["ArticleBorrar"] as $idArticle) {
+                $article = $this->articleRepository->findWithoutFail($idArticle);
+                foreach($article->imatges as $imatge) {
+                    $imatge->delete();
+                }
+                $this->articleRepository->delete($idArticle);
+            }
         }
 
-        return $articleMarcat;
+        Flash::success('Articles eliminats correctament.');
+
+        return redirect(route('articles.index'));
     }
 }

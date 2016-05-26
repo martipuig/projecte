@@ -60,3 +60,21 @@ if($('.llistaproductes').length) {
 		}, jquery_productes
 	);
 }
+
+if($('#articles-table').length) {
+	function botoEliminar() {
+		$('input[type="checkbox"]').each(function(){
+			if(this.checked) {
+				$('#botoEliminar').prop("disabled", false);
+				return false;
+			}
+			$('#botoEliminar').prop("disabled", true);
+		})
+	}
+
+	$('input[type="checkbox"]').each(function() {
+		$(this).change(function() {
+			botoEliminar();
+		})
+	})
+}
