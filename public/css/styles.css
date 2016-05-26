@@ -1,7 +1,6 @@
 .centrat{
     width: 70%;
     margin: auto;
-
 }
 
 .header {
@@ -81,6 +80,85 @@
     margin-top: 20px;
 }
 
+/*CSS Dropdown menu*/
+
+#primary_nav_wrap
+{
+    margin-top:15px
+}
+
+#primary_nav_wrap ul
+{
+    list-style:none;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+}
+
+#primary_nav_wrap ul a
+{
+    display:block;
+    color:#333;
+    text-decoration:none;
+    font-weight:700;
+    font-size:12px;
+    line-height:32px;
+    padding:0 15px;
+    font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primary_nav_wrap ul li
+{
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+}
+
+#primary_nav_wrap ul li.current-menu-item
+{
+    background:#ddd
+}
+
+#primary_nav_wrap ul li:hover
+{
+    background:#f6f6f6
+}
+
+#primary_nav_wrap ul ul
+{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#fff;
+    padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+    float:none;
+    width:200px
+}
+
+#primary_nav_wrap ul ul a
+{
+    line-height:120%;
+    padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul
+{
+    top:0;
+    left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+    display:block
+}
+
 @media (min-width: 1200px){
     .container {
         width: 900px;
@@ -97,19 +175,23 @@
     .container {
         width: 100%;
     }
+
     #ampladaslider{
         width: 100%;
         float: none!important;
     }
+
     #ampladanovetats{
         width: 100%;
         margin-left: -30px;
         margin-top: 15px;
         display: none;
     }
+
     .col-md-12{
         margin-left: -30px;
     }
+
     #movilcontainer{
         margin-top: 15px;
     }
@@ -126,7 +208,7 @@
     /* size of bullet elment */
     width: 16px;
     height: 16px;
-    background: url('img/b05.png') no-repeat;
+    background: url('../img/b05.png') no-repeat;
     overflow: hidden;
     cursor: pointer;
 }
@@ -150,7 +232,7 @@
     width: 40px;
     height: 58px;
     cursor: pointer;
-    background: url('img/a22.png') center center no-repeat;
+    background: url('../img/a22.png') center center no-repeat;
     overflow: hidden;
 }
 .jssora22l {
@@ -205,8 +287,6 @@ li,a,img,ul,div,span {
 .img-rounded {
     margin-bottom: 6px;
 }
-
-
 
 .footer{
     height: 60px;
