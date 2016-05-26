@@ -5,10 +5,10 @@
 }
 
 .header {
-    /*width: 100%;*/
-   /* background: #e7e7e7;
+    /* width: 100%; */
+    /* background: #e7e7e7;
     color: #fff;*/
-    height: 50px;
+    height: 100px;
 }
 
 #ampladaslider{
@@ -81,40 +81,6 @@
     margin-top: 20px;
 }
 
-@media (min-width: 1200px){
-    .container {
-        width: 900px;
-    }
-}
-
-@media (min-width: 1400px){
-    .container {
-        width: 1170px;
-    }
-}
-
-@media (max-width: 450px){
-    .container {
-        width: 100%;
-    }
-    #ampladaslider{
-        width: 100%;
-        float: none!important;
-    }
-    #ampladanovetats{
-        width: 100%;
-        margin-left: -30px;
-        margin-top: 15px;
-        display: none;
-    }
-    .col-md-12{
-        margin-left: -30px;
-    }
-    #movilcontainer{
-        margin-top: 15px;
-    }
-}
-
 
 
 /*CSS de slider*/
@@ -126,7 +92,7 @@
     /* size of bullet elment */
     width: 16px;
     height: 16px;
-    background: url('img/b05.png') no-repeat;
+    background: url('../img/b05.png') no-repeat;
     overflow: hidden;
     cursor: pointer;
 }
@@ -150,7 +116,7 @@
     width: 40px;
     height: 58px;
     cursor: pointer;
-    background: url('img/a22.png') center center no-repeat;
+    background: url('../img/a22.png') center center no-repeat;
     overflow: hidden;
 }
 .jssora22l {
@@ -211,4 +177,77 @@ li,a,img,ul,div,span {
 .footer{
     height: 60px;
     background-color: #e7e7e7;
+}
+
+.navbar-center{
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.navbar-nav>li{
+    float:none!important;
+}
+
+#buscador{
+    width: 500px;
+    height: 32px;
+}
+
+#centrarbuscador{
+    padding-top: 8px;
+}
+
+#navbarindex{
+    height: 100px;
+}
+
+.padding-header-index{
+    padding-top: 30px;
+}
+
+.align-center-header{
+    padding-top: 25px;
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1400px){
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (max-width: 500px){
+    .container {
+        width: 100%;
+    }
+    #ampladaslider{
+        width: 100%;
+        float: none!important;
+    }
+    #ampladanovetats{
+        width: 100%;
+        margin-left: -30px;
+        margin-top: 15px;
+        display: none;
+    }
+    .col-md-12{
+        margin-left: -30px;
+    }
+    #movilcontainer{
+        margin-top: 15px;
+    }
+    #buscador{
+        width: 100px;
+        height: 30px;
+    }
+    #navbarindex{
+        height: 50px;
+    }
 }

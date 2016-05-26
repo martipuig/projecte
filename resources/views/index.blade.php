@@ -3,25 +3,17 @@
 @section('header')
 	{{-- Header / Menu --}}
 	<header class="header">
-	    <nav class="navbar navbar-default navbar-static-top">
-	        <div class="container">
-	            <div class="navbar-header">
-
-	                <a class="navbar-brand" href="{{ url('/index') }}">
-	                    Bé De Preu
-	                </a>
-	            </div>
-	            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+	    <nav id="navbarindex" class="navbar navbar-default navbar-static-top">
+	        <div class="container align-center-header">
+	            <div id="app-navbar-collapse">
 	                    <!-- LPart de la dreta de la barra -->
-	                    <ul class="nav navbar-nav">
-	                        <li><a href="{{ url('/index') }}">Menu 1</a></li>
-	                        <li><a href="{{ url('/index') }}">Menu 2</a></li>
-	                        <li><a href="{{ url('/index') }}">Menu 3</a></li>
-	                    </ul>
 
 	                    <!-- Aqui si volem alinear a la dreta -->
-	                    <ul class="nav navbar-nav navbar-right">
-	                    	<li><a><input style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
+	                    <ul class="navbar-brand">
+	                    	Be De Preu
+	                    </ul>
+	                    <ul class="nav navbar-nav navbar-center">
+	                    	<li><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
 	                    </ul>
 	            </div>
 	        </div>
