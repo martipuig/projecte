@@ -69,5 +69,3 @@ Route::post('add', 'PictureController@savePicture');
 
 Route::get('index', 'indexController@index');
 Route::resource('index', 'indexController');
-
-
