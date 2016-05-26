@@ -1,6 +1,7 @@
 @extends('layouts.index')
 
 @section('header')
+<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 	{{-- Header / Menu --}}
 	<header class="header">
 	    <nav id="navbarindex" class="navbar navbar-default navbar-static-top">
@@ -12,9 +13,38 @@
 	                    <ul class="navbar-brand">
 	                    	Be De Preu
 	                    </ul>
-	                    <ul class="nav navbar-nav navbar-center">
-	                    	<li><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
+	                    <div class="nav navbar-nav float-left">
+						<div id="primary_nav_wrap">
+						    <ul class="nav navbar-nav">
+						        <li><a href="#">Categories</a>
+						        	<ul>
+						        		@foreach($categorias as $categoria)
+						            		<li><a href="#">{!! $categoria->NomCat !!}</a>
+												<ul>
+													@foreach($categoriaEsps as $catEsp)
+														@if($categoria->id == $catEsp->categoria_id)
+															<li><a href="#">{!! $catEsp->NomEsp !!}</a></li>
+														@endif
+													@endforeach
+												</ul>
+						            		</li>
+						        		@endforeach
+						        	</ul>
+						        </li>
+						    </ul>
+						</div>
+					</div>
+	                    <ul class="nav navbar-nav float-right">
+	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+									data-target="#app-navbar-collapse">
+								<span class="sr-only">Toggle Navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+	                    	<li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
 	                    </ul>
+
 	            </div>
 	        </div>
 	    </nav>
@@ -24,7 +54,7 @@
 	<script type="text/javascript" src="{!! asset('js/slider.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
 	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
-<br><br>
+	<div>&nbsp;</div>
 	<div class="container">
 	    <div class="pull-left text-center" id="ampladaslider">
 	        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
@@ -71,40 +101,40 @@
 	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.min.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
 	<div class="container" id="movilcontainer">
-	<script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
-	<div class="container">
-		<div class="panel panel-default">
-			<div class="panel-heading">Productes</div>
-			<div class="panel-body">
-				<ul class="llistaproductes">
-				  @foreach($articles as $article)
-					  @foreach($article->imatges as $key => $imatge)
-						@if($key == 0)
-							<li>
-						      <a href=""><img src="resize/{{ $imatge->id }}" id="producte" alt="" /></a>
-						      <div class="content">
-						          <div class="contentinner">
-						              <div>
-						                  <span class="price">{!! $article->preu !!}</span>
-						                  <a href="" class="title">{!! $article->NomArt !!}</a>
-						              </div>
-						              <p class="desc">{!! $article->descripcio !!}</p>
-						          </div>
-						      </div>
-						  	</li>
-						@endif
+		<script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">Productes</div>
+				<div class="panel-body">
+				<!-- Llistat de productes -->
+					<ul class="llistaproductes">
+						@foreach($articles as $article)
+							@foreach($article->imatges as $key => $imatge)
+								@if($key == 0)
+									<li>
+								      <a href=""><img src="resize/{{ $imatge->id }}" id="producte" alt="" /></a>
+								      <div class="content">
+								          <div class="contentinner">
+								              <div>
+								                  <span class="price">{!! $article->preu !!}</span>
+								                  <a href="" class="title">{!! $article->NomArt !!}</a>
+								              </div>
+								              <p class="desc">{!! $article->descripcio !!}</p>
+								          </div>
+								      </div>
+								  	</li>
+								@endif
+							@endforeach
 						@endforeach
-					@endforeach
-				</ul>
-				{!! $articles->links() !!}
+					</ul>
+					{!! $articles->links() !!}
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<footer class="footer">
-	<div class="container">
-		<p>Aparcao</p>
-	</div>
-</footer>
+	<footer class="footer">
+		<div class="container">
+			<p>Aparcao</p>
+		</div>
+	</footer>
 @endsection
-
