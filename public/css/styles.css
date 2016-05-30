@@ -264,7 +264,7 @@ li,a,img,ul,div,span {
 }
 
 .navbar-nav>li{
-   /* float:none!important;*/
+    /* float:none!important; */
 }
 
 #buscador{
@@ -286,6 +286,10 @@ li,a,img,ul,div,span {
 
 .align-center-header{
     padding-top: 25px;
+}
+
+.categories-centre{
+        margin-top: -5px;
 }
 
 @media (min-width: 1200px){
@@ -338,5 +342,14 @@ li,a,img,ul,div,span {
     }
     #amagar-movil{
         display: none;
+    }
+    .categories-centre{
+        margin-top: -13px;
+    }
+    .hamburger-centre{
+        margin-top: 0px;
+    }
+    .margin-top-slider-movil{
+        margin-top: -70px;
     }
 }
