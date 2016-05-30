@@ -160,7 +160,9 @@
 {
     display:block
 }
-
+.margin-top-ordinador{
+    margin-top: 60px;
+}
 
 /*CSS de slider*/
 #jssor_1{
