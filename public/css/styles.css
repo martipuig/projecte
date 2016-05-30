@@ -4,10 +4,10 @@
 }
 
 .header {
-    /*width: 100%;*/
-   /* background: #e7e7e7;
+    /* width: 100%; */
+    /* background: #e7e7e7;
     color: #fff;*/
-    height: 50px;
+    height: 100px;
 }
 
 #ampladaslider{
@@ -84,7 +84,7 @@
 
 #primary_nav_wrap
 {
-    margin-top:15px
+    margin-top:15px;
 }
 
 #primary_nav_wrap ul
@@ -158,45 +158,6 @@
 {
     display:block
 }
-
-@media (min-width: 1200px){
-    .container {
-        width: 900px;
-    }
-}
-
-@media (min-width: 1400px){
-    .container {
-        width: 1170px;
-    }
-}
-
-@media (max-width: 450px){
-    .container {
-        width: 100%;
-    }
-
-    #ampladaslider{
-        width: 100%;
-        float: none!important;
-    }
-
-    #ampladanovetats{
-        width: 100%;
-        margin-left: -30px;
-        margin-top: 15px;
-        display: none;
-    }
-
-    .col-md-12{
-        margin-left: -30px;
-    }
-
-    #movilcontainer{
-        margin-top: 15px;
-    }
-}
-
 
 
 /*CSS de slider*/
@@ -291,4 +252,89 @@ li,a,img,ul,div,span {
 .footer{
     height: 60px;
     background-color: #e7e7e7;
+}
+
+.navbar-center{
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.navbar-nav>li{
+    float:none!important;
+}
+
+#buscador{
+    width: 500px;
+    height: 32px;
+}
+
+#centrarbuscador{
+    padding-top: 8px;
+}
+
+#navbarindex{
+    height: 100px;
+}
+
+.padding-header-index{
+    padding-top: 30px;
+}
+
+.align-center-header{
+    padding-top: 25px;
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1400px){
+    .container {
+        width: 1170px;
+    }
+}
+
+@media (max-width: 500px){
+    #ampladaslider{
+        width: 100%;
+        float: none!important;
+    }
+    #ampladanovetats{
+        width: 100%;
+        margin-left: -30px;
+        margin-top: 15px;
+        display: none;
+    }
+    .col-md-12{
+        margin-left: -30px;
+    }
+    #movilcontainer{
+        margin-top: 15px;
+    }
+    #buscador{
+        width: 100px;
+        height: 30px;
+    }
+    #navbarindex{
+        height: 50px;
+    }
+     .container {
+        width: 100%;
+    }
+    .align-center-header{
+        padding-top: 0px;
+    }
+    .float-left{
+        float: left;
+    }
+    .float-right{
+        float: right;
+    }
+    #amagar-movil{
+        display: none;
+    }
 }

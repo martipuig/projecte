@@ -4,16 +4,16 @@
 <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 	{{-- Header / Menu --}}
 	<header class="header">
-	    <nav class="navbar navbar-default navbar-static-top">
-	        <div class="container">
-	            <div class="navbar-header">
-	                <a class="navbar-brand" href="{{ url('/index') }}">
-	                    Bé De Preu
-	                </a>
-	            </div>
-	            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-	            <!-- Dropdown menu -->
-					<div class="nav navbar-nav">
+	    <nav id="navbarindex" class="navbar navbar-default navbar-static-top">
+	        <div class="container align-center-header">
+	            <div id="app-navbar-collapse">
+	                    <!-- LPart de la dreta de la barra -->
+
+	                    <!-- Aqui si volem alinear a la dreta -->
+	                    <ul class="navbar-brand">
+	                    	Be De Preu
+	                    </ul>
+	                    <div class="nav navbar-nav float-left">
 						<div id="primary_nav_wrap">
 						    <ul class="nav navbar-nav">
 						        <li><a href="#">Categories</a>
@@ -34,9 +34,17 @@
 						    </ul>
 						</div>
 					</div>
-	                <ul class="nav navbar-nav navbar-right">
-	                	<li><a><input style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
-	                </ul>
+	                    <ul class="nav navbar-nav float-right">
+	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+									data-target="#app-navbar-collapse">
+								<span class="sr-only">Toggle Navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+	                    	<li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
+	                    </ul>
+
 	            </div>
 	        </div>
 	    </nav>
