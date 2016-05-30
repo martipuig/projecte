@@ -55,15 +55,15 @@
 	<script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
 	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 	<div>&nbsp;</div>
-	<div class="container margin-top-slider-movil margin-top-ordinador">
+	<div class="padding-slider-movil margin-top-slider-movil margin-top-ordinador">
 	    <div class="pull-left text-center" id="ampladaslider">
-	        <div id="jssor_1" style="">
+	        <div id="jssor_1">
 	            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
 	                <div data-p="225.00" style="display: none;">
-	                    <img data-u="image" src="img/s7.jpg" />
+	                    <img id="mida-img" data-u="image" src="img/s7.jpg" />
 	                </div>
 	                <div data-p="225.00" style="display: none;">
-	                    <img data-u="image" src="img/mi5.jpg" />
+	                    <img id="mida-img" data-u="image" src="img/mi5.jpg" />
 	                </div>
 	            
 	            </div>
