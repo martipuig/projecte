@@ -112,6 +112,13 @@
 								                  <a href="" class="title">{!! $article->NomArt !!}</a>
 								              </div>
 								              <p class="desc">{!! $article->descripcio !!}</p>
+								              <span class="input-group-btn text-center">
+								              	 {!! Form::open(['route' => ['proddet.show', $article->id]]) !!}
+									                <div class='btn-group'>
+									                    <a href="{!! route('proddet.show', [$article->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+									                </div>
+									                {!! Form::close() !!}
+								              </span>
 								          </div>
 								      </div>
 								  	</li>
