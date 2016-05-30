@@ -16,7 +16,7 @@
 	                    <div class="nav navbar-nav float-left">
 						<div id="primary_nav_wrap">
 						    <ul class="nav navbar-nav">
-						        <li><a href="#" class="categories-centre">Categories</a>
+						        <li><a href="#">Categories</a>
 						        	<ul>
 						        		@foreach($categorias as $categoria)
 						            		<li><a href="#">{!! $categoria->NomCat !!}</a>
@@ -35,7 +35,7 @@
 						</div>
 					</div>
 	                    <ul class="nav navbar-nav float-right">
-	                    <button type="button" class="navbar-toggle collapsed hamburger-centre" data-toggle="collapse"
+	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
 									data-target="#app-navbar-collapse">
 								<span class="sr-only">Toggle Navigation</span>
 								<span class="icon-bar"></span>
@@ -55,15 +55,15 @@
 	<script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
 	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 	<div>&nbsp;</div>
-	<div class="container margin-top-slider-movil">
+	<div class="container">
 	    <div class="pull-left text-center" id="ampladaslider">
 	        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
 	            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
 	                <div data-p="225.00" style="display: none;">
-	                    <img data-u="image" src="img/s7.jpg" />
+	                    <img data-u="image" src="img/slider1.jpg" />
 	                </div>
 	                <div data-p="225.00" style="display: none;">
-	                    <img data-u="image" src="img/mi5.jpg" />
+	                    <img data-u="image" src="img/slider2.jpg" />
 	                </div>
 	            
 	            </div>
@@ -87,7 +87,7 @@
 	                <div class="panel-body">
 	            		<ul class="nav navbar-nav">
 	            			<b>Xiaomi mi5</b>
-	            			<li><img data-u="image" src="img/mi5.jpg" style="width: 100%;"/></li>
+	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
 	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            			<li><b>Xiaomi mi5</b></li>
 	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
