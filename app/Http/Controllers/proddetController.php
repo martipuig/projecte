@@ -71,4 +71,21 @@ class proddetController extends AppBaseController {
         
         return view('proddet')->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps)->with('id', $id);
     }
+
+        public function edit($id)
+    {
+        $article = $this->articleRepository->findWithoutFail($id);
+        $categories=\App\Models\categoria::lists('NomCat', 'id');
+        $categoriesEsp=\App\Models\categoriaEsp::where('categoria_id', $article->categoria_id)->lists('NomEsp', 'id');
+        $estats=array("No venut"=>"No venut", "Venut"=>"Venut", "Reservat"=>"Reservat");
+        $mostrar=array("Sí"=>"Sí", "No"=>"No");
+
+        if (empty($article)) {
+            Flash::error('No s\'ha trobat cap article');
+
+            return redirect(route('articles.index'));
+        }
+
+        return view('articles.edit')->with('article', $article)->with('categories', $categories)->with('categoriesEsp', $categoriesEsp)->with('estats', $estats)->with('mostrar', $mostrar);
+    }
 }

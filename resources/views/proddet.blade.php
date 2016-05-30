@@ -17,6 +17,11 @@
 						<div>
 							Preu: <span class="price">{!! $article->preu !!}</span>
 						</div>
+						@if(Auth::user())
+							{!! Form::open(['route' => ['proddet.edit', $article->id]]) !!}
+								<a href="{!! route('articles.edit', [$article->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+							{!! Form::close() !!}
+						@endif
 					</div>
 				</div>
 			@endif
