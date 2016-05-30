@@ -67,6 +67,10 @@ Route::post('add', 'PictureController@savePicture');
 
 
 //Ruta de index
-
 Route::get('index', 'indexController@index');
 Route::resource('index', 'indexController');
+
+//Ruta de productes detall
+
+Route::get('proddet', 'proddetController@index');
+Route::resource('proddet', 'proddetController');

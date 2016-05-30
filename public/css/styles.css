@@ -7,7 +7,7 @@
     /* width: 100%; */
     /* background: #e7e7e7;
     color: #fff;*/
-    height: 100px;
+    height: 50px;
 }
 
 #ampladaslider{
@@ -264,7 +264,7 @@ li,a,img,ul,div,span {
 }
 
 .navbar-nav>li{
-    float:none!important;
+   /* float:none!important;*/
 }
 
 #buscador{
