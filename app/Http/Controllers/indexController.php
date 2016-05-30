@@ -27,7 +27,8 @@ class indexController extends AppBaseController {
     public function index(Request $request)
     {
         $this->articleRepository->pushCriteria(new RequestCriteria($request));
-        $articles = $this->articleRepository->paginate(6);
+        //$articles = $this->articleRepository->paginate(6);
+        $articles = \App\Models\article::where('mostrar', 'Sí')->paginate(6);
 
         $this->categoriaRepository->pushCriteria(new RequestCriteria($request));
         $categorias = $this->categoriaRepository->all();
