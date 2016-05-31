@@ -56,10 +56,10 @@
 	        <div id="jssor_1" style="">
 	            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
 	                <div data-p="225.00" style="display: none;">
-	                    <img data-u="image" src="img/slider1.jpg" />
+	                    <img data-u="image" src="img/s7.jpg" />
 	                </div>
 	                <div data-p="225.00" style="display: none;">
-	                    <img data-u="image" src="img/slider2.jpg" />
+	                    <img data-u="image" src="img/mi5.jpg" />
 	                </div>
 	            
 	            </div>
@@ -75,10 +75,10 @@
 	                <div class="panel-body">
 	            		<ul class="nav navbar-nav">
 	            			<b>Xiaomi mi5</b>
-	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
+	            			<li><img data-u="image" src="img/s7.jpg" style="width: 100%;"/></li>
 	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            			<li><b>Xiaomi mi5</b></li>
-	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
+	            			<li><img data-u="image" src="img/mi5.jpg" style="width: 100%;"/></li>
 	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            		</ul>
 	                </div>
@@ -93,7 +93,7 @@
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-heading">Productes</div>
-				<div class="panel-body">
+				<div class="panel-body text-center" id="pbody">
 				<!-- Llistat de productes -->
 					<ul class="llistaproductes">
 						@foreach($articles as $article)
