@@ -46,4 +46,28 @@ class indexController extends AppBaseController {
             ->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps);
     }
 
+public function buscador($buscar)
+{
+    $articles = \App\Models\article::with(['imatges'=>function($query) {
+        $query->select(['id', 'name', 'article_id']);
+    }])
+    ->where('mostrar', 'Sí')
+    ->where(function($query) use($buscar) {
+        $query->where('NomArt', 'LIKE', '%' . $buscar . '%')
+        ->orWhere('descripcio', 'LIKE', '%' . $buscar . '%');
+    })
+    ->paginate(6);
+
+    return Response::json($articles);
+    
+    // foreach ($articles as $article) {
+    //     echo "<pre>";
+    //     var_dump($article);
+    //     echo "</pre>";
+    //     //echo $article->id . "</br>";
+    // }
+
+    //var_dump($articles);
+ }
+
 }

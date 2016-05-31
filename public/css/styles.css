@@ -265,14 +265,25 @@ li,a,img,ul,div,span {
     /* float:none!important; */
 }
 
-#buscador{
+#resultatsBuscador {
+    position: absolute;
+    z-index:1;
     width: 500px;
-    height: 32px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto; 
+    background-color: white;  
 }
 
-#centrarbuscador{
-    padding-top: 8px;
+#buscador {
+    width: 500px;
+    margin: auto;
 }
+
+/*#centrarbuscador{
+    padding-top: 8px;
+}*/
 
 #navbarindex{
     height: 100px;
@@ -319,9 +330,8 @@ li,a,img,ul,div,span {
     #movilcontainer{
         margin-top: 15px;
     }
-    #buscador{
-        width: 100px;
-        height: 30px;
+    #buscador, #resultatsBuscador {
+        width: 90%;
     }
     #navbarindex{
         height: 50px;
@@ -347,7 +357,11 @@ li,a,img,ul,div,span {
     .hamburger-centre{
         margin-top: 0px;
     }
-    .margin-top-slider-movil{
+    /*.margin-top-slider-movil{
         margin-top: -70px;
-    }
+    }*/
 }
+
+
+
+

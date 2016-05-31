@@ -42,7 +42,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 						</button>
-	                    	<li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
+	                    	{{-- <li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li> --}}
 	                    </ul>
 
 	            </div>
@@ -54,6 +54,13 @@
 	<script type="text/javascript" src="{!! asset('js/slider.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
 	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
+	{{-- buscador --}}
+	<div id="contenidorBuscador">
+		<div id="divBuscador">
+			<input id="buscador"  type="text" name="buscador" placeholder="Buscar" class="form-control">
+		</div>
+		<div id="resultatsBuscador"></div>
+	</div>
 	<div>&nbsp;</div>
 	<div class="container margin-top-slider-movil">
 	    <div class="pull-left text-center" id="ampladaslider">
