@@ -7,9 +7,6 @@
 	    <nav id="navbarindex" class="navbar navbar-default navbar-static-top">
 	        <div class="container align-center-header">
 	            <div id="app-navbar-collapse">
-	                    <!-- LPart de la dreta de la barra -->
-
-	                    <!-- Aqui si volem alinear a la dreta -->
 	                    <ul class="navbar-brand">
 	                    	Be De Preu
 	                    </ul>
