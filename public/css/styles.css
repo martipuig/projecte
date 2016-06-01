@@ -15,7 +15,7 @@
 }
 
 #ampladanovetats{
-    width: 30%;
+    width: 35%;
 }
 
 #mesinformacio{
@@ -89,6 +89,10 @@
     object-fit: fill;
     float: left;
     margin-top: 20px;
+}
+
+#ampladanovetats > div > div > div.panel-body > ul > li > p {
+    line-height: 170%;
 }
 
 /*CSS Dropdown menu*/
@@ -492,9 +496,9 @@ div.desc {
     .categories-centre{
         margin-top: -13px;
     }
-    .hamburger-centre{
+    /*.hamburger-centre{
         margin-top: 0px;
-    }
+    }*/
     .margin-top-slider-movil{
         margin-top: 10px;
     }
@@ -510,12 +514,14 @@ div.desc {
     }
 }
 
-
-
-
-
-
-
-    
-
-
+@media screen and (max-width: 767px) {
+    .table-responsive {
+        overflow-x:auto;
+        border: none;
+    }
+    .respons-table {
+        max-width: 100%;
+        overflow-x: auto;
+        border: none;
+    }
+}

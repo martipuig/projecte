@@ -1,3 +1,4 @@
+<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <div>&nbsp;</div>
 
 <input class="search form-control" placeholder="Buscar" id="searchTerm" type="text">
