@@ -74,3 +74,8 @@ Route::resource('index', 'indexController');
 
 Route::get('proddet', 'proddetController@index');
 Route::resource('proddet', 'proddetController');
+
+//Ruta de Categoria detall
+
+Route::get('categoriaDetall', 'categoriaDetallController@index');
+Route::resource('categoriaDetall', 'categoriaDetallController');

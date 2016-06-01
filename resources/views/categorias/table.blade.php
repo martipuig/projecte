@@ -1,3 +1,4 @@
+<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <table class="table table-responsive" id="categorias-table">
     <thead>
         <th>Nom</th>
