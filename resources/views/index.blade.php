@@ -7,16 +7,13 @@
 	    <nav id="navbarindex" class="navbar navbar-default navbar-static-top">
 	        <div class="container align-center-header">
 	            <div id="app-navbar-collapse">
-	                    <!-- LPart de la dreta de la barra -->
-
-	                    <!-- Aqui si volem alinear a la dreta -->
-	                    <ul class="navbar-brand">
-	                    	Be De Preu
-	                    </ul>
-	                    <div class="nav navbar-nav float-left">
+                    <ul class="navbar-brand">
+                    	Be De Preu
+                    </ul>
+                    <div class="nav navbar-nav float-left">
 						<div id="primary_nav_wrap">
 						    <ul class="nav navbar-nav">
-						        <li><a href="#" class="categories-centre">Categories</a>
+						        <li><a href="#">Categories</a>
 						        	<ul>
 						        		@foreach($categorias as $categoria)
 						            		<li><a href="#">{!! $categoria->NomCat !!}</a>
@@ -43,8 +40,7 @@
 								<span class="icon-bar"></span>
 						</button>
 	                    	{{-- <li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li> --}}
-	                    </ul>
-
+	                    </ul>	             
 	            </div>
 	        </div>
 	    </nav>
@@ -61,10 +57,10 @@
 		</div>
 		<div id="resultatsBuscador"></div>
 	</div>
-	<div>&nbsp;</div>
-	<div class="container margin-top-slider-movil">
+	{{-- <div>&nbsp;</div> --}}
+	<div class="container margin-top-slider-movil margin-top-ordinador">
 	    <div class="pull-left text-center" id="ampladaslider">
-	        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
+	        <div id="jssor_1" style="">
 	            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
 	                <div data-p="225.00" style="display: none;">
 	                    <img data-u="image" src="img/s7.jpg" />
@@ -74,14 +70,6 @@
 	                </div>
 	            
 	            </div>
-	            <!-- Bullet Navigator -->
-	            <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
-	                <!-- bullet navigator item prototype -->
-	                <div data-u="prototype" style="width:16px;height:16px;"></div>
-	            </div>
-	            <!-- Arrow Navigator -->
-	            <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
-	            <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
 	        </div>
 	        <script>
 	            jssor_1_slider_init();
@@ -94,10 +82,10 @@
 	                <div class="panel-body">
 	            		<ul class="nav navbar-nav">
 	            			<b>Xiaomi mi5</b>
-	            			<li><img data-u="image" src="img/mi5.jpg" style="width: 100%;"/></li>
+	            			<li><img data-u="image" src="img/s7.jpg" style="width: 100%;"/></li>
 	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            			<li><b>Xiaomi mi5</b></li>
-	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
+	            			<li><img data-u="image" src="img/mi5.jpg" style="width: 100%;"/></li>
 	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            		</ul>
 	                </div>
@@ -112,7 +100,7 @@
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-heading">Productes</div>
-				<div class="panel-body">
+				<div class="panel-body text-center" id="pbody">
 				<!-- Llistat de productes -->
 					<ul class="llistaproductes">
 						@foreach($articles as $article)
@@ -127,6 +115,13 @@
 								                  <a href="" class="title">{!! $article->NomArt !!}</a>
 								              </div>
 								              <p class="desc">{!! $article->descripcio !!}</p>
+								              <span class="input-group-btn text-center">
+								              	 {!! Form::open(['route' => ['proddet.show', $article->id]]) !!}
+									                <div class='btn-group'>
+									                    <a href="{!! route('proddet.show', [$article->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+									                </div>
+									                {!! Form::close() !!}
+								              </span>
 								          </div>
 								      </div>
 								  	</li>

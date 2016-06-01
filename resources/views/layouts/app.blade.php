@@ -85,15 +85,9 @@
 @endif
     <!-- Page Content -->
     <div class="centrat">
-
-        <div class="container-fluid">
-
             <div class="row">
-                <div class="col-lg-12">
                     @yield('content')
-                </div>
             </div>
-        </div>
     </div>
     <!-- /#page-content-wrapper -->
 

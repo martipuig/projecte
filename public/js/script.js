@@ -63,6 +63,7 @@ if($('.llistaproductes').length) {
 	// buscador
 	var url_buscador=public_url+"/buscador/";
 	var url_imatge=public_url+"/resize/";
+	var url_proddet=public_url+"/proddet/";
 
 	$('#buscador').keyup(function() {
 		if($('#buscador').val().length>0) {
@@ -78,10 +79,11 @@ if($('.llistaproductes').length) {
 			url : url_buscador + $('#buscador').val(),
 			success : function(dades) {
 				articles=dades.data;
+				console.log(dades)
 				var html="<table class='table table-hover'>";
 				for(var i=0;i<articles.length;i++) {
 					//console.log(articles[i].imatges[0])
-					html+="<tr>";
+					html+="<tr onclick='document.location = \"" + url_proddet + articles[i].id +"\";'>";
 					html+="<td>" + "<img src='"  + url_imatge + articles[i].imatges[0].id + "' height='30'/></td>";
 					html+="<td>" + articles[i].NomArt + "</td>";
 					html+="<td>" + articles[i].preu + "€</td>";
@@ -89,9 +91,14 @@ if($('.llistaproductes').length) {
 				}
 				html+="</table>";
 				$('#resultatsBuscador').html(html);
+				if(dades.next_page_url) {
+					$('#resultatsBuscador').append("<a href='#'>Més resultats</>");
+				}
 			}
 		});
 	}
+
+
 }
 
 if($('#articles-table').length) {

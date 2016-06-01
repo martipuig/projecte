@@ -56,7 +56,7 @@ public function buscador($buscar)
         $query->where('NomArt', 'LIKE', '%' . $buscar . '%')
         ->orWhere('descripcio', 'LIKE', '%' . $buscar . '%');
     })
-    ->paginate(6);
+    ->paginate(5);
 
     return Response::json($articles);
     
