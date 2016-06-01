@@ -20,11 +20,14 @@
 												<ul>
 													@foreach($categoriaEsps as $catEsp)
 														@if($categoria->id == $catEsp->categoria_id)
-															<li><a href="#">{!! $catEsp->NomEsp !!}</a></li>
+															{!! Form::open(['route' => ['categoriaDetall.show', $catEsp->id]]) !!}
+															<li><a href="{!! route('categoriaDetall.show', [$catEsp->id]) !!}">{!! $catEsp->NomEsp !!}</a></li>
+															{!! Form::close() !!}
 														@endif
 													@endforeach
 												</ul>
 						            		</li>
+						        		
 						        		@endforeach
 						        	</ul>
 						        </li>
@@ -39,7 +42,11 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 					</button>
-	                	<li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
+	                	<li id="amagar-movil">
+	                		<a id="centrarbuscador">
+	                			<input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar">
+	                		</a>
+	                	</li>
 	                </ul>
 	            </div>
 	        </div>
@@ -74,12 +81,12 @@
 	                <div class="panel-heading">Ultimes Novetats</div>
 	                <div class="panel-body">
 	            		<ul class="nav navbar-nav">
-	            			<b>Xiaomi mi5</b>
+	            			<li><h4>Xiaomi mi5</h4></li>
 	            			<li><img data-u="image" src="img/s7.jpg" style="width: 100%;"/></li>
-	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
-	            			<li><b>Xiaomi mi5</b></li>
+	            			<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></p></li>
+	            			<li><h4>Xiaomi mi5</h4></li>
 	            			<li><img data-u="image" src="img/mi5.jpg" style="width: 100%;"/></li>
-	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
+	            			<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></p></li>
 	            		</ul>
 	                </div>
 	            </div>
@@ -108,12 +115,12 @@
 								              </div>
 								              <p class="desc">{!! $article->descripcio !!}</p>
 								              <span class="input-group-btn text-center">
-								              	 {!! Form::open(['route' => ['proddet.show', $article->id]]) !!}
+								              	{!! Form::open(['route' => ['proddet.show', $article->id]]) !!}
 									                <div class='btn-group'>
 									                    <a href="{!! route('proddet.show', [$article->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
 									                    <a onclick="cookieskdjhgbvkcfdhb({!! $article->id !!})" class='btn btn-default btn-xs'><i id="{!! $article->id !!}" class="glyphicon glyphicon-heart-empty"></i></a>
 									                </div>
-									                {!! Form::close() !!}
+									            {!! Form::close() !!}
 								              </span>
 								          </div>
 								      </div>
