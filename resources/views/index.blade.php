@@ -13,7 +13,7 @@
 	                    <div class="nav navbar-nav float-left">
 						<div id="primary_nav_wrap">
 						    <ul class="nav navbar-nav">
-						        <li><a href="#" class="categories-centre">Categories</a>
+						        <li><a href="#">Categories</a>
 						        	<ul>
 						        		@foreach($categorias as $categoria)
 						            		<li><a href="#">{!! $categoria->NomCat !!}</a>
@@ -31,17 +31,16 @@
 						    </ul>
 						</div>
 					</div>
-	                    <ul class="nav navbar-nav float-right">
-	                    <button type="button" class="navbar-toggle collapsed hamburger-centre" data-toggle="collapse"
-									data-target="#app-navbar-collapse">
-								<span class="sr-only">Toggle Navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-						</button>
-	                    	<li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
-	                    </ul>
-
+	                <ul class="nav navbar-nav float-right">
+	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+								data-target="#app-navbar-collapse">
+							<span class="sr-only">Toggle Navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+					</button>
+	                	<li id="amagar-movil"><a id="centrarbuscador"><input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar"></a></li>
+	                </ul>
 	            </div>
 	        </div>
 	    </nav>
@@ -52,15 +51,15 @@
 	<script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
 	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
 	<div>&nbsp;</div>
-	<div class="padding-slider-movil margin-top-slider-movil margin-top-ordinador">
+	<div class="container margin-top-slider-movil margin-top-ordinador">
 	    <div class="pull-left text-center" id="ampladaslider">
-	        <div id="jssor_1">
+	        <div id="jssor_1" style="">
 	            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
 	                <div data-p="225.00" style="display: none;">
-	                    <img id="mida-img" data-u="image" src="img/s7.jpg" />
+	                    <img data-u="image" src="img/s7.jpg" />
 	                </div>
 	                <div data-p="225.00" style="display: none;">
-	                    <img id="mida-img" data-u="image" src="img/mi5.jpg" />
+	                    <img data-u="image" src="img/mi5.jpg" />
 	                </div>
 	            
 	            </div>
@@ -76,10 +75,10 @@
 	                <div class="panel-body">
 	            		<ul class="nav navbar-nav">
 	            			<b>Xiaomi mi5</b>
-	            			<li><img data-u="image" src="img/mi5.jpg" style="width: 100%;"/></li>
+	            			<li><img data-u="image" src="img/s7.jpg" style="width: 100%;"/></li>
 	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            			<li><b>Xiaomi mi5</b></li>
-	            			<li><img data-u="image" src="img/slider1.jpg" style="width: 100%;"/></li>
+	            			<li><img data-u="image" src="img/mi5.jpg" style="width: 100%;"/></li>
 	            			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="{{ url('/login') }}" id="mesinformacio">més informació</a></li>
 	            		</ul>
 	                </div>
@@ -90,11 +89,10 @@
 	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.min.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
 	<div class="container" id="movilcontainer">
-		<script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-heading">Productes</div>
-				<div class="panel-body">
+				<div class="panel-body text-center" id="pbody">
 				<!-- Llistat de productes -->
 					<ul class="llistaproductes">
 						@foreach($articles as $article)
@@ -113,6 +111,7 @@
 								              	 {!! Form::open(['route' => ['proddet.show', $article->id]]) !!}
 									                <div class='btn-group'>
 									                    <a href="{!! route('proddet.show', [$article->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+									                    <a onclick="cookieskdjhgbvkcfdhb({!! $article->id !!})" class='btn btn-default btn-xs'><i id="{!! $article->id !!}" class="glyphicon glyphicon-heart-empty"></i></a>
 									                </div>
 									                {!! Form::close() !!}
 								              </span>
