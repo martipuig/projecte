@@ -27,6 +27,7 @@
 						              	{!! Form::open(['route' => ['proddet.show', $article->id]]) !!}
 							                <div class='btn-group'>
 							                    <a href="{!! route('proddet.show', [$article->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+							                    <a onclick="cookieskdjhgbvkcfdhb({!! $article->id !!})" class='btn btn-default btn-xs'><i id="{!! $article->id !!}" class="glyphicon glyphicon-heart-empty"></i></a>
 							                </div>
 							            {!! Form::close() !!}
 						              </span>
@@ -36,10 +37,10 @@
 						@endif
 					@endforeach
 				@endforeach
-				@endsection
 				</ul>
 				{!! $articles->links() !!}
 			</div>
 		</div>
 	</div>
 </div>
+@endsection

@@ -89,6 +89,19 @@ var favoritosarray = [];
 if (localStorage.getItem("favoritos") != null) {
 	var retrievedData = localStorage.getItem("favoritos");
 	var favoritosarray = JSON.parse(retrievedData);
+	var hola = 1000;
+	$.ajax({
+	    type: "POST",
+        url: 'preferits',
+        data: {'hola' : hola},
+        success: function() {
+            console.log("Geodata sent");
+        },
+        error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+        console.log(JSON.stringify(jqXHR));
+        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+    }
+    });
 	for (var key in favoritosarray) {
         document.getElementById(favoritosarray[key]).className = "glyphicon glyphicon-heart";
 	}
@@ -108,3 +121,5 @@ function cookieskdjhgbvkcfdhb(id){
 		}
 	};
 }
+
+console.log(favoritosarray);

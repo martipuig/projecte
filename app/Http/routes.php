@@ -79,3 +79,8 @@ Route::resource('proddet', 'proddetController');
 
 Route::get('categoriaDetall', 'categoriaDetallController@index');
 Route::resource('categoriaDetall', 'categoriaDetallController');
+
+//Ruta de Preferits
+
+Route::post('preferits', 'preferitsController@index');
+Route::resource('preferits', 'preferitsController');
