@@ -91,9 +91,9 @@ if($('.llistaproductes').length) {
 				}
 				html+="</table>";
 				$('#resultatsBuscador').html(html);
-				if(dades.next_page_url) {
-					$('#resultatsBuscador').append("<a href='#'>Més resultats</>");
-				}
+				// if(dades.next_page_url) {
+				// 	$('#resultatsBuscador').append("<a href='#'>Més resultats</>");
+				// }
 			}
 		});
 	}
@@ -116,5 +116,40 @@ if($('#articles-table').length) {
 		$(this).change(function() {
 			botoEliminar();
 		})
+	})
+}
+
+if($('#mapaplanol').length) {
+	$('#mapaplanol').imageMapResize();
+	$('#planol').maphilight();
+
+	$(window).on('resize', function() {
+		$('#mapaplanol').imageMapResize();
+		$('#planol').maphilight();
+		pintarPosicioGuardada();
+	});
+
+	if(typeof posicioGuardada!=='undefined' && posicioGuardada>0) {
+		pintarPosicioGuardada();
+	}
+
+	function pintarPosicioGuardada() {
+		$('area').each(function() {
+			if($(this).attr('data-posicio')==posicioGuardada) {
+				$('.active_area').data('maphilight',{alwaysOn:false}).trigger('alwaysOn.maphilight');           
+			    $(this).addClass('active_area').data('maphilight',{alwaysOn:true}).trigger('alwaysOn.maphilight');
+				return false;
+			}
+		})
+	}
+
+	$('area').click(function(){
+        var posicio=$(this).attr('data-posicio');
+        posicioGuardada=posicio;
+        $('form').append("<input type='hidden' name='posicio' value='"+ posicio +"'/>");
+
+        $('.active_area').data('maphilight',{alwaysOn:false}).trigger('alwaysOn.maphilight');           
+        $(this).addClass('active_area').data('maphilight',{alwaysOn:true}).trigger('alwaysOn.maphilight');
+		return false;
 	})
 }
