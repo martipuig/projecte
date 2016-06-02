@@ -13,7 +13,7 @@
                     <div class="nav navbar-nav float-left">
 						<div id="primary_nav_wrap">
 						    <ul class="nav navbar-nav">
-						        <li><a href="#">Categories</a>
+						        <li>Categories
 						        	<ul>
 						        		@foreach($categorias as $categoria)
 						            		<li><a href="#">{!! $categoria->NomCat !!}</a>

@@ -5,6 +5,7 @@
 <script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
 <script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
 <link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
+<div>&nbsp;</div>
 <div class="container">
 	<div class="panel panel-default">
 		<div class="panel-heading">Productes</div>

@@ -79,3 +79,10 @@ Route::resource('proddet', 'proddetController');
 
 Route::get('categoriaDetall', 'categoriaDetallController@index');
 Route::resource('categoriaDetall', 'categoriaDetallController');
+
+//Ruta de contacte
+Route::group(['middleware' => ['web']], function () {
+    Route::post('contacte', 'ContactController@store');
+	Route::get('contacte','contacteController@index');
+	Route::resource('contacte','contacteController');
+});
