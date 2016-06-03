@@ -70,6 +70,7 @@ Route::post('add', 'PictureController@savePicture');
 Route::get('index', 'indexController@index');
 Route::resource('index', 'indexController');
 Route::get('buscador/{buscar}', 'indexController@buscador');
+Route::get('resultats/{buscar}', 'indexController@resultats');
 
 //Ruta de productes detall
 Route::get('proddet', 'proddetController@index');
@@ -79,3 +80,11 @@ Route::resource('proddet', 'proddetController');
 
 Route::get('categoriaDetall', 'categoriaDetallController@index');
 Route::resource('categoriaDetall', 'categoriaDetallController');
+
+//Ruta de Preferits
+
+//Route::post('preferits', 'preferitsController@index');
+//Route::get('preferits', 'preferitsController@noPassaPreferits');
+Route::get('preferits', 'preferitsController@preferits');
+Route::get('ajaxpreferits/{preferits}', 'preferitsController@ajaxPreferits');
+//Route::resource('preferits', 'preferitsController');

@@ -7,10 +7,10 @@
 	    <nav id="navbarindex" class="navbar navbar-default navbar-static-top">
 	        <div class="container align-center-header">
 	            <div id="app-navbar-collapse">
-                    <ul class="navbar-brand">
-                    	Be De Preu
-                    </ul>
-                    <div class="nav navbar-nav float-left">
+	                    <ul class="navbar-brand">
+	                    	Be De Preu
+	                    </ul>
+	                    <div class="nav navbar-nav float-left">
 						<div id="primary_nav_wrap">
 						    <ul class="nav navbar-nav">
 						        <li><a href="#">Categories</a>
@@ -30,6 +30,9 @@
 						        		
 						        		@endforeach
 						        	</ul>
+						        </li>
+						        <li>
+						        	<a href="{{URL::to('/preferits')}}">Preferits</a>
 						        </li>
 						    </ul>
 						</div>
@@ -103,7 +106,6 @@
 	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.min.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
 	<div class="container" id="movilcontainer">
-		<script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-heading">Productes</div>
@@ -126,6 +128,7 @@
 								              	{!! Form::open(['route' => ['proddet.show', $article->id]]) !!}
 									                <div class='btn-group'>
 									                    <a href="{!! route('proddet.show', [$article->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+									                    <a onclick="cookieskdjhgbvkcfdhb({!! $article->id !!})" class='btn btn-default btn-xs'><i id="{!! $article->id !!}" class="glyphicon glyphicon-heart-empty"></i></a>
 									                </div>
 									            {!! Form::close() !!}
 								              </span>
@@ -142,8 +145,8 @@
 		</div>
 	</div>
 	<footer class="footer">
-		<div class="container">
-			<p>Aparcao</p>
+		<div class="container"><br>
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 		</div>
 	</footer>
 @endsection

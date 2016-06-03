@@ -30,7 +30,7 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ url('/login') }}">
+                <a class="navbar-brand" href="{{ url('/index') }}">
                         Bé De Preu
                 </a>
                 <!-- Collapsed Hamburger -->
@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="navbar-header">
 
-                    <a class="navbar-brand" href="{{ url('/login') }}">
+                    <a class="navbar-brand" href="{{ url('/index') }}">
                         Bé De Preu
                     </a>
                 </div>
@@ -142,6 +142,9 @@
     </script>
     <script type="text/javascript" src="{{ URL::asset('js/imageMapResizer.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery.maphilight.min.js') }}"></script>
+    <script>
+        public_url="{{URL::to('/')}}";
+    </script>
     <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
     @yield('scripts')
 </body>

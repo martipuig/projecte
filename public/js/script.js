@@ -7,12 +7,17 @@ function eliminarImatge(imatge) {
 	}).appendTo('form');
 }
 
+
 $( "img" )
   .error(function() {
-  	var id=$( this ).attr("src").substr($( this ).attr("src").indexOf("/") + 1);
-  	//console.log(id);
-  	if($( this ).attr("src").substr(0, $( this ).attr("src").indexOf("/")) == "resize") {
-  		$( this ).attr( "src", "resize/" + id );
+  	var array_url=$( this ).attr("src").split("/");
+  	//console.log(array_url);
+  	var id=array_url.pop();
+  	var m=array_url.pop();
+  	// console.log(id)
+  	// console.log(m);
+  	if(m == "resize") {
+  		$( this ).attr( "src", public_url + "/resize/" + id );
   	}
   })
 
@@ -79,7 +84,7 @@ if($('.llistaproductes').length) {
 			url : url_buscador + $('#buscador').val(),
 			success : function(dades) {
 				articles=dades.data;
-				console.log(dades)
+				//console.log(dades)
 				var html="<table class='table table-hover'>";
 				for(var i=0;i<articles.length;i++) {
 					//console.log(articles[i].imatges[0])
@@ -91,12 +96,94 @@ if($('.llistaproductes').length) {
 				}
 				html+="</table>";
 				$('#resultatsBuscador').html(html);
-				// if(dades.next_page_url) {
-				// 	$('#resultatsBuscador').append("<a href='#'>Més resultats</>");
-				// }
+				if(dades.next_page_url) {
+					$('#resultatsBuscador').append("<a href='" + public_url + "/resultats/" + $('#buscador').val() + "'>Més resultats</>");
+				}
 			}
 		});
 	}
+
+	$('#buscador').keypress(function(e) {
+	    if(e.which == 13 && $('#buscador').val()!="") {
+	        document.location = public_url + "/resultats/" + $('#buscador').val();
+	    }
+	});
+
+	//preferits
+	if(localStorage.getItem("favoritos")!=null) {
+		favoritosarray = JSON.parse(localStorage.getItem("favoritos"));
+
+		for (var key in favoritosarray) {
+	        $('#' + favoritosarray[key]).attr("class", "glyphicon glyphicon-heart");
+		}
+	}
+	else {
+		favoritosarray = [];
+	}
+
+	//console.log(favoritosarray);
+
+	function cookieskdjhgbvkcfdhb(id){
+		if (document.getElementById(id).className == "glyphicon glyphicon-heart-empty") {
+			document.getElementById(id).className = "glyphicon glyphicon-heart";
+			favoritosarray.push(id);
+			localStorage.setItem("favoritos", JSON.stringify(favoritosarray));
+		}else{
+			document.getElementById(id).className = "glyphicon glyphicon-heart-empty";
+			for (var key in favoritosarray) {
+			    if (favoritosarray[key] == id) {
+			        favoritosarray.splice(key, 1);
+			        localStorage.setItem("favoritos", JSON.stringify(favoritosarray));
+			    }
+			}
+		};
+	}
+
+	// function mostrarPreferits() {
+	// 	var url = public_url + "/preferits";
+	// 	var form = $('<form action="' + url + '" method="post">' +
+ //  		'<input type="hidden" name="preferits" value="' + JSON.stringify(favoritosarray) + '" />' +
+ //  		'<input type="hidden" name="_token" value="' +	token_laravel + '"/></form>');
+ //  		$('body').append(form);
+	// 	form.submit();
+	// }
+
+	if(window.location.href.indexOf("preferits") > -1) {
+       $.ajax({
+			url : public_url + "/ajaxpreferits/" + JSON.stringify(favoritosarray),
+			success : function(articles) {
+				//console.log(articles)
+				for(var i=0;i<articles.length;i++) {
+					//console.log(articles[i].imatges[0].name)
+					var article="<li><a href=''><img src='"  + url_imatge + articles[i].imatges[0].id + "' id='producte' alt=''/></a>";
+					article+="<div class='content'>";
+					article+="<div class='contentinner' style='margin-top:132px;'>";
+					article+="<div>";
+					article+="<span class='price'>" + articles[i].preu + "</span>";
+					article+="<a href='' class='title'>" + articles[i].NomArt + "</a>";
+					article+="</div>";
+					article+="<p class='desc'>" + articles[i].descripcio + "</p>";
+					article+="<span class='input-group-btn text-center'>";
+					article+="<div class='btn-group'>";
+					article+="<a href='" + public_url + "/proddet/" + articles[i].id + "' class='btn btn-default btn-xs'><i class='glyphicon glyphicon-eye-open'></i></a>";
+					article+="<a onclick='cookieskdjhgbvkcfdhb(" + articles[i].id + ")' class='btn btn-default btn-xs'><i id='" + articles[i].id + "'class='glyphicon glyphicon-heart-empty'></i></a>";
+					article+="</div>";
+					article+="</span>";
+					article+="</div>";
+					article+="</div>";
+					article+="</li>";
+					$('.llistaproductes').append(article);
+				}
+				for (var key in favoritosarray) {
+			        $('#' + favoritosarray[key]).attr("class", "glyphicon glyphicon-heart");
+				}
+			},
+			complete : function() {
+				jquery_productes();
+			}
+		});
+    }
+
 
 
 }
@@ -153,3 +240,4 @@ if($('#mapaplanol').length) {
 		return false;
 	})
 }
+
