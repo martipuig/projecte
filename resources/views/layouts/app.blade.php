@@ -140,6 +140,11 @@
             }
         });        
     </script>
+    <script type="text/javascript" src="{{ URL::asset('js/imageMapResizer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/jquery.maphilight.min.js') }}"></script>
+    <script>
+        public_url="{{URL::to('/')}}";
+    </script>
     <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
     @yield('scripts')
 </body>

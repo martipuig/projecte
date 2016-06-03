@@ -25,28 +25,27 @@ class preferitsController extends AppBaseController {
         $this->categoriaEspRepository = $categoriaEspRepo;
     }
 
-    public function index(Request $request)
-    {
-        $this->articleRepository->pushCriteria(new RequestCriteria($request));
-        //$articles = $this->articleRepository->paginate(6);
-        $articles = \App\Models\article::where('mostrar', 'Sí')->paginate(6);
 
+    public function ajaxpreferits($jsonPreferits) {
+        $preferits=json_decode($jsonPreferits, true);
+        $articles = \App\Models\article::with(['imatges'=>function($query) {
+            $query->select(['id', 'name', 'article_id']);
+        }])
+        ->where('mostrar', 'Sí')->whereIn('id', $preferits)->get();
+        return Response::json($articles);
+    }
+
+    public function preferits(Request $request)
+    {
         $this->categoriaRepository->pushCriteria(new RequestCriteria($request));
         $categorias = $this->categoriaRepository->all();
 
         $this->categoriaEspRepository->pushCriteria(new RequestCriteria($request));
         $categoriaEsps = $this->categoriaEspRepository->all();
 
-        $asd = $request->all();
-
-
-        // foreach($articles as $article){
-        //     foreach($article->imatges as $a){
-        //         var_dump($a->name);
-        //         echo "<br>";
-        //     }
-        // }
        return view('preferits')
-            ->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps)->with('asd', $asd);
+            ->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps);
     }
+
+    
 }

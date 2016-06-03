@@ -8,6 +8,7 @@
             <img src="../../resize/{{ $imatge->id }}" class="img-rounded" height="100" id="{{ $imatge->id }}" onclick="eliminarImatge(this)">
         @endforeach
     </div>
+    <script>posicioGuardada={{ $article->posicio }}</script>
 @endif
 
 <!-- Nomart Field -->
@@ -92,10 +93,10 @@
 </div>
 
 <!-- Posicio Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('posicio', 'Posicio:') !!}
+{{-- <div class="form-group col-sm-6">
+    {!! Form::label('posicio', 'Posició:') !!}
     {!! Form::text('posicio', null, ['class' => 'form-control']) !!}
-</div>
+</div> --}}
 
 <!-- Descripcio Field -->
 <div class="form-group col-sm-12">
@@ -108,6 +109,21 @@
     {!! Form::label('notes', 'Notes:') !!}
     {!! Form::textarea('notes', null, ['class' => 'form-control', 'rows' => 3, 'maxlength' => 255]) !!}
 </div>
+
+<!-- Posicio -->
+<div class="col-sm-12">
+    <img src="{!! URL::to('img/planol.png') !!}" alt="Planol" usemap="#mapaplanol" id="planol">
+    <map name="mapaplanol" id="mapaplanol">
+      <area shape="rect" coords="57,274,325,587" data-posicio="1">
+      <area shape="rect" coords="326,274,650,587" data-posicio="2">
+      <area shape="rect" coords="651,274,975,587" data-posicio="3">
+      <area shape="poly" coords="976,587,1145,587,1145,354,1235,354,1236,199,1145,199,1145,131,976,131" data-posicio="4">
+      <area shape="rect" coords="975,131,650,274" data-posicio="5">
+      <area shape="rect" coords="649,131,326,274" data-posicio="6"> 
+    </map>
+</div>
+
+
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

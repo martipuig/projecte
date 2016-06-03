@@ -31,22 +31,25 @@
 						        		@endforeach
 						        	</ul>
 						        </li>
+						        <li>
+						        	<a href="{{URL::to('/preferits')}}">Preferits</a>
+						        </li>
 						    </ul>
 						</div>
 					</div>
 	                <ul class="nav navbar-nav float-right">
-	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+	                <button type="button" class="navbar-toggle collapsed hamburger-centre" data-toggle="collapse"
 								data-target="#app-navbar-collapse">
 							<span class="sr-only">Toggle Navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 					</button>
-	                	<li id="amagar-movil">
+	                	{{-- <li id="amagar-movil">
 	                		<a id="centrarbuscador">
 	                			<input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar">
 	                		</a>
-	                	</li>
+	                	</li> --}}
 	                </ul>
 	            </div>
 	        </div>
@@ -57,7 +60,14 @@
 	<script type="text/javascript" src="{!! asset('js/slider.js') !!}"></script>
 	<script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
 	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
-	<div>&nbsp;</div>
+	{{-- buscador --}}
+	<div id="contenidorBuscador">
+		<div id="divBuscador">
+			<input id="buscador"  type="text" name="buscador" placeholder="Buscar" class="form-control">
+		</div>
+		<div id="resultatsBuscador"></div>
+	</div>
+	{{-- <div>&nbsp;</div> --}}
 	<div class="container margin-top-slider-movil margin-top-ordinador">
 	    <div class="pull-left text-center" id="ampladaslider">
 	        <div id="jssor_1" style="">

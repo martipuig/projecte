@@ -34,7 +34,12 @@
 
 @yield('header')
 @yield('SliderIUltimesNovetats')
+@yield('content')
 
+<script>
+    public_url="{{URL::to('/')}}";
+    token_laravel="{{ csrf_token() }}";
+</script>
 <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 </body>
 </html>

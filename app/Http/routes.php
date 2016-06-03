@@ -69,9 +69,10 @@ Route::post('add', 'PictureController@savePicture');
 //Ruta de index
 Route::get('index', 'indexController@index');
 Route::resource('index', 'indexController');
+Route::get('buscador/{buscar}', 'indexController@buscador');
+Route::get('resultats/{buscar}', 'indexController@resultats');
 
 //Ruta de productes detall
-
 Route::get('proddet', 'proddetController@index');
 Route::resource('proddet', 'proddetController');
 
@@ -89,5 +90,8 @@ Route::group(['middleware' => ['web']], function () {
 
 //Ruta de Preferits
 
-Route::get('preferits', 'preferitsController@index');
-Route::resource('preferits', 'preferitsController');
+//Route::post('preferits', 'preferitsController@index');
+//Route::get('preferits', 'preferitsController@noPassaPreferits');
+Route::get('preferits', 'preferitsController@preferits');
+Route::get('ajaxpreferits/{preferits}', 'preferitsController@ajaxPreferits');
+//Route::resource('preferits', 'preferitsController');
