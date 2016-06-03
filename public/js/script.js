@@ -7,6 +7,7 @@ function eliminarImatge(imatge) {
 	}).appendTo('form');
 }
 
+
 $( "img" )
   .error(function() {
   	var id=$( this ).attr("src").substr($( this ).attr("src").indexOf("/") + 1);
@@ -78,3 +79,43 @@ if($('#articles-table').length) {
 		})
 	})
 }
+
+$(document).one('ready',function(){
+    
+});
+
+//Funcio de cookies/favoritos
+var favoritosarray = [];
+if (localStorage.getItem("favoritos") != null) {
+	var retrievedData = localStorage.getItem("favoritos");
+	var favoritosarray = JSON.parse(retrievedData);
+	var hola = 1000;
+	$.ajax({
+	    type: "GET",
+        data: {data : retrievedData},
+        dataType: "text",
+        success: function(data) {
+            console.log(data);
+        }
+    });
+	for (var key in favoritosarray) {
+        document.getElementById(favoritosarray[key]).className = "glyphicon glyphicon-heart";
+	}
+};
+function cookieskdjhgbvkcfdhb(id){
+	if (document.getElementById(id).className == "glyphicon glyphicon-heart-empty") {
+		document.getElementById(id).className = "glyphicon glyphicon-heart";
+		favoritosarray.push(id);
+		localStorage.setItem("favoritos", JSON.stringify(favoritosarray));
+	}else{
+		document.getElementById(id).className = "glyphicon glyphicon-heart-empty";
+		for (var key in favoritosarray) {
+		    if (favoritosarray[key] == id) {
+		        favoritosarray.splice(key, 1);
+		        localStorage.setItem("favoritos", JSON.stringify(favoritosarray));
+		    }
+		}
+	};
+}
+
+console.log(favoritosarray);

@@ -86,3 +86,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('contacte','contacteController@index');
 	Route::resource('contacte','contacteController');
 });
+
+//Ruta de Preferits
+
+Route::get('preferits', 'preferitsController@index');
+Route::resource('preferits', 'preferitsController');
