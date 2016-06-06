@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
 @section('content')
+<div class="container">
 	@foreach($articles as $article)
 		@foreach($article->imatges as $key => $imatge)
 			@if($article->id == $id)
@@ -19,7 +20,7 @@
 					{!! $article->descripcio !!}
 					<div>&nbsp;</div>
 					<div>
-						Preu: <span class="price">{!! $article->preu !!}</span>
+						Preu: <span class="price">{!! $article->preu !!}€</span>
 					</div>
 					@if(Auth::user())
 						{!! Form::open(['route' => ['proddet.edit', $article->id]]) !!}
@@ -37,7 +38,7 @@
 			@endif
 		@endforeach
 	@endforeach
-
+</div>
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');

@@ -16,7 +16,7 @@
     @foreach($articles as $article)
         <tr class="Fila_Article">
             <td>{!! $article->NomArt !!}</td>
-            <td>{!! $article->preu !!}</td> 
+            <td>{!! $article->preu !!}€</td> 
             <td style="display:none;">{{!! $article->estat !!}}</td>
             <td style="display:none;">{{!! $article->descripcio !!}}</td>
        </tr>

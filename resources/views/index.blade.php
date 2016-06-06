@@ -1,72 +1,5 @@
 @extends('layouts.index')
-
-@section('header')
-<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
-	{{-- Header / Menu --}}
-	<header class="header">
-	    <nav id="navbarindex" class="navbar navbar-default navbar-static-top">
-	        <div class="container align-center-header">
-	            <div id="app-navbar-collapse">
-	                    <ul class="navbar-brand">
-	                    	Be De Preu
-	                    </ul>
-	                    <div class="nav navbar-nav float-left">
-						<div id="primary_nav_wrap">
-						    <ul class="nav navbar-nav">
-						        <li>Categories
-						        	<ul>
-						        		@foreach($categorias as $categoria)
-						            		<li><a href="#">{!! $categoria->NomCat !!}</a>
-												<ul>
-													@foreach($categoriaEsps as $catEsp)
-														@if($categoria->id == $catEsp->categoria_id)
-															{!! Form::open(['route' => ['categoriaDetall.show', $catEsp->id]]) !!}
-															<li><a href="{!! route('categoriaDetall.show', [$catEsp->id]) !!}">{!! $catEsp->NomEsp !!}</a></li>
-															{!! Form::close() !!}
-														@endif
-													@endforeach
-												</ul>
-						            		</li>
-						        		
-						        		@endforeach
-						        	</ul>
-						        </li>
-						        <li>
-						        	<a href="{{URL::to('/preferits')}}">Preferits</a>
-						        </li>
-						    </ul>
-						</div>
-					</div>
-	                <ul class="nav navbar-nav float-right">
-	                <button type="button" class="navbar-toggle collapsed hamburger-centre" data-toggle="collapse"
-								data-target="#app-navbar-collapse">
-							<span class="sr-only">Toggle Navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-					</button>
-	                	{{-- <li id="amagar-movil">
-	                		<a id="centrarbuscador">
-	                			<input id="buscador" style="padding-bottom: 0px;" type="text" name="buscador" placeholder="Buscar">
-	                		</a>
-	                	</li> --}}
-	                </ul>
-	            </div>
-	        </div>
-	    </nav>
-	</header>
-@endsection
 @section('SliderIUltimesNovetats')
-	<script type="text/javascript" src="{!! asset('js/slider.js') !!}"></script>
-	<script type="text/javascript" src="{!! asset('js/jssor.slider.min.js') !!}"></script>
-	<link href="{!! asset('css/styles.css') !!}" media="all" rel="stylesheet" type="text/css" />
-	{{-- buscador --}}
-	<div id="contenidorBuscador">
-		<div id="divBuscador">
-			<input id="buscador"  type="text" name="buscador" placeholder="Buscar" class="form-control">
-		</div>
-		<div id="resultatsBuscador"></div>
-	</div>
 	{{-- <div>&nbsp;</div> --}}
 	<div class="container margin-top-slider-movil margin-top-ordinador">
 	    <div class="pull-left text-center" id="ampladaslider">
@@ -103,8 +36,6 @@
 	        </div>
 	    </div>
 	</div>
-	<script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.min.js') !!}"></script>
-	<script type="text/javascript" src="{!! asset('js/jquery_productes.js') !!}"></script>
 	<div class="container" id="movilcontainer">
 		<div class="container">
 			<div class="panel panel-default">
@@ -120,7 +51,7 @@
 								      <div class="content">
 								          <div class="contentinner">
 								              <div>
-								                  <span class="price">{!! $article->preu !!}</span>
+								                  <span class="price">{!! $article->preu !!}€</span>
 								                  <a href="" class="title">{!! $article->NomArt !!}</a>
 								              </div>
 								              <p class="desc">{!! $article->descripcio !!}</p>
@@ -144,9 +75,4 @@
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
-		<div class="container"><br>
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
-		</div>
-	</footer>
 @endsection

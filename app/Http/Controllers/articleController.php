@@ -37,17 +37,12 @@ class articleController extends AppBaseController
      * @param Request $request
      * @return Response
      */
+
+    //redirecciona a la vista articles.index amb els articles
     public function index(Request $request)
     {
         $this->articleRepository->pushCriteria(new RequestCriteria($request));
         $articles = $this->articleRepository->all();
-        // foreach($articles as $article){
-        //     foreach ($article->imatges as $key => $imatge) {
-        //         if($key==0) {
-        //             echo $imatge->name . "<br>";
-        //         }
-        //     }
-        // }
        return view('articles.index')
             ->with('articles', $articles);
     }
@@ -57,6 +52,9 @@ class articleController extends AppBaseController
      *
      * @return Response
      */
+
+    //redirecciona a la vista articles.create amb les categories, categories específiques,
+    //els estats que pot estar l'article i les opcions que es poden seleccionar al camp mostrar
     public function create()
     {
         $categories=\App\Models\categoria::lists('NomCat', 'id');
@@ -73,6 +71,8 @@ class articleController extends AppBaseController
      *
      * @return Response
      */
+
+    //guarda l'article creat a la bbdd, si s'han afegit imatges les guarda a la taula pictures i les associa amb l'article
     public function store(CreatearticleRequest $request)
     {
         $input = $request->all();
@@ -122,11 +122,6 @@ class articleController extends AppBaseController
 
             return redirect(route('articles.index'));
         }
-
-            // foreach($article->imatges as $a){
-            //     var_dump($a->name);
-            //     echo "<br>";
-            // }
         
         return view('articles.show')->with('article', $article);
     }

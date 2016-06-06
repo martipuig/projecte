@@ -24,11 +24,12 @@ class indexController extends AppBaseController {
         $this->categoriaEspRepository = $categoriaEspRepo;
     }
 
+    //redirecciona a la vista index amb les categories, categories específiques i 
+    //els articles 
     public function index(Request $request)
     {
         $this->articleRepository->pushCriteria(new RequestCriteria($request));
-        //$articles = $this->articleRepository->paginate(6);
-        $articles = \App\Models\article::where('mostrar', 'Sí')->paginate(6);
+        $articles = \App\Models\article::where('mostrar', 'Sí')->paginate(8);
 
         $this->categoriaRepository->pushCriteria(new RequestCriteria($request));
         $categorias = $this->categoriaRepository->all();
@@ -36,64 +37,45 @@ class indexController extends AppBaseController {
         $this->categoriaEspRepository->pushCriteria(new RequestCriteria($request));
         $categoriaEsps = $this->categoriaEspRepository->all();
 
-        // foreach($articles as $article){
-        //     foreach($article->imatges as $a){
-        //         var_dump($a->name);
-        //         echo "<br>";
-        //     }
-        // }
        return view('index')
             ->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps);
     }
 
-public function buscador($buscar)
-{
-    $articles = \App\Models\article::with(['imatges'=>function($query) {
-        $query->select(['id', 'name', 'article_id']);
-    }])
-    ->where('mostrar', 'Sí')
-    ->where(function($query) use($buscar) {
-        $query->where('NomArt', 'LIKE', '%' . $buscar . '%')
-        ->orWhere('descripcio', 'LIKE', '%' . $buscar . '%');
-    })
-    ->paginate(5);
+    // retorn en format json els articles que tenen el valor Sí al camp mostrar i que contenen la cadena de caràcters passada per get
+    // al nom de l'article o la descripció 
+    public function buscador($buscar)
+    {
+        $articles = \App\Models\article::with(['imatges'=>function($query) {
+            $query->select(['id', 'name', 'article_id']);
+        }])
+        ->where('mostrar', 'Sí')
+        ->where(function($query) use($buscar) {
+            $query->where('NomArt', 'LIKE', '%' . $buscar . '%')
+            ->orWhere('descripcio', 'LIKE', '%' . $buscar . '%');
+        })
+        ->paginate(5);
 
-    return Response::json($articles);
-    
-    // foreach ($articles as $article) {
-    //     echo "<pre>";
-    //     var_dump($article);
-    //     echo "</pre>";
-    //     //echo $article->id . "</br>";
-    // }
+        return Response::json($articles);
+    }
 
-    //var_dump($articles);
-}
+    //redirecciona a la vista resultats amb les categories, categories específiques i 
+    //els articles que tenen el valor Sí al camp mostrar i que contenen la cadena de caràcters passada per get
+    //al nom de l'article o la descripció 
+    public function resultats($buscar)
+    {
+        $articles = \App\Models\article::where('mostrar', 'Sí')
+        ->where(function($query) use($buscar) {
+            $query->where('NomArt', 'LIKE', '%' . $buscar . '%')
+            ->orWhere('descripcio', 'LIKE', '%' . $buscar . '%');
+        })
+        ->paginate(6);
 
-public function resultats($buscar)
-{
-    $articles = \App\Models\article::where('mostrar', 'Sí')
-    ->where(function($query) use($buscar) {
-        $query->where('NomArt', 'LIKE', '%' . $buscar . '%')
-        ->orWhere('descripcio', 'LIKE', '%' . $buscar . '%');
-    })
-    ->paginate(6);
+        $categorias = $this->categoriaRepository->all();
 
-    //$this->categoriaRepository->pushCriteria(new RequestCriteria($request));
-    $categorias = $this->categoriaRepository->all();
+        $categoriaEsps = $this->categoriaEspRepository->all();
 
-    //$this->categoriaEspRepository->pushCriteria(new RequestCriteria($request));
-    $categoriaEsps = $this->categoriaEspRepository->all();
-
-    // foreach($articles as $article){
-    //         foreach($article->imatges as $a){
-    //             var_dump($a->name);
-    //             echo "<br>";
-    //         }
-    //     }
-
-    return view('resultats')
-            ->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps)->with('buscar', $buscar);
-}
+        return view('resultats')
+                ->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps)->with('buscar', $buscar);
+    }
 
 }

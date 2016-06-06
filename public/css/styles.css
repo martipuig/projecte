@@ -528,3 +528,7 @@ div.desc {
 #planol {
     width: 100%;
 }
+
+.hamburger-centre {
+    display: none;
+}
