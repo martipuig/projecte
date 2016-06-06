@@ -98,7 +98,8 @@ if($('.llistaproductes').length) {
 		favoritosarray = [];
 	}
 
-	function cookieskdjhgbvkcfdhb(id){
+	function cookieskdjhgbvkcfdhb(event, id){
+		event.stopPropagation();
 		//si l'article no està marcat com a preferit el marca, l'agegeix a l'array de preferits i guarda l'array de preferits en format JSON al localStorage
 		if (document.getElementById(id).className == "glyphicon glyphicon-heart-empty") {
 			document.getElementById(id).className = "glyphicon glyphicon-heart";
@@ -127,12 +128,12 @@ if($('.llistaproductes').length) {
 				quantitatArticles=articles.length;
 				for(var i=0;i<articles.length;i++) {
 					//console.log(articles[i].imatges[0].name)
-					var article="<li><a href=''><img src='"  + url_imatge + articles[i].imatges[0].id + "' id='producte' alt=''/></a>";
+					var article="<li><a href='" + url_proddet + articles[i].id + "'><img src='"  + url_imatge + articles[i].imatges[0].id + "' id='producte' alt=''/></a>";
 					article+="<div class='content'>";
-					article+="<div class='contentinner' style='margin-top:132px;'>";
+					article+="<div class='contentinner' style='margin-top:132px;' onclick='document.location = \"" + url_proddet + articles[i].id +"\";'>";
 					article+="<div>";
 					article+="<span class='price'>" + articles[i].preu + "€</span>";
-					article+="<a href='' class='title'>" + articles[i].NomArt + "</a>";
+					article+="<a href='" + url_proddet + articles[i].id + "' class='title'>" + articles[i].NomArt + "</a>";
 					article+="</div>";
 					article+="<p class='desc'>" + articles[i].descripcio + "</p>";
 					article+="<span class='input-group-btn text-center'>";
@@ -219,6 +220,10 @@ if($('#articles-table').length) {
     $(".Fila_Article").click(function(){
         $(this).next().toggle();
     }) 
+
+    $('.btn-group.pull-right').click(function(event) {
+	    event.stopPropagation();
+	});
 
     //buscador vista articles
     $(".search").keyup(function(){

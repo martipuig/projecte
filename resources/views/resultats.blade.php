@@ -16,12 +16,12 @@
 					@foreach($article->imatges as $key => $imatge)
 						@if($key == 0)
 							<li>
-						      <a href=""><img src="../resize/{{ $imatge->id }}" id="producte" alt="" /></a>
+						      <a href="{!! route('proddet.show', [$article->id]) !!}"><img src="../resize/{{ $imatge->id }}" id="producte" alt="" /></a>
 						      <div class="content">
-						          <div class="contentinner">
+						          <div class="contentinner" onclick="document.location = '{!! route('proddet.show', [$article->id]) !!}'">
 						              <div>
 						                  <span class="price">{!! $article->preu !!}€</span>
-						                  <a href="" class="title">{!! $article->NomArt !!}</a>
+						                  <a href="{!! route('proddet.show', [$article->id]) !!}" class="title">{!! $article->NomArt !!}</a>
 						              </div>
 						              <p class="desc">{!! $article->descripcio !!}</p>
 						              <span class="input-group-btn text-center">

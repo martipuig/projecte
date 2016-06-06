@@ -72,7 +72,8 @@ class articleController extends AppBaseController
      * @return Response
      */
 
-    //guarda l'article creat a la bbdd, si s'han afegit imatges les guarda a la taula pictures i les associa amb l'article
+    //guarda l'article creat a la bbdd, si s'han afegit imatges les guarda a la taula pictures, juntament amb una imatge de menys resolució
+    //i les associa amb l'article, redirecciona a la vista articles.index
     public function store(CreatearticleRequest $request)
     {
         $input = $request->all();
@@ -133,6 +134,9 @@ class articleController extends AppBaseController
      *
      * @return Response
      */
+
+    //redirecciona a la vista articles.edit amb l'article que s'ha d'editar, les categories, categories específiques,
+    //els estats que pot estar l'article i les opcions que es poden seleccionar al camp mostrar
     public function edit($id)
     {
         $article = $this->articleRepository->findWithoutFail($id);
@@ -158,6 +162,8 @@ class articleController extends AppBaseController
      *
      * @return Response
      */
+
+    //actualitza les dades de l'article, si s'han eliminat imatges les borra de la taula pictures i si s'afegeixen imatges les afegeix a la taula pictures
     public function update($id, UpdatearticleRequest $request)
     {
         $article = $this->articleRepository->findWithoutFail($id);
@@ -213,6 +219,7 @@ class articleController extends AppBaseController
      *
      * @return Response
      */
+    //elimina l'article, si l'article tenia imatges les borra de la taula pictures
     public function destroy($id)
     {
         $article = $this->articleRepository->findWithoutFail($id);
@@ -235,11 +242,13 @@ class articleController extends AppBaseController
         return redirect(route('articles.index'));
     }
 
+    //retorna en format ajax les categories específiques que pertanyen a la categoria amb l'id que s'ha passat com a paràmetre get
     public function ajax($cat_id){
         $categoriesEsp = \App\Models\categoriaEsp::where('categoria_id', $cat_id)->lists('NomEsp', 'id');
         return Response::json($categoriesEsp);
     }
 
+    //elimina els article, els articles tenien imatges les borra de la taula pictures
     public function multidestroy(request $request){
         $input=$request->all();
         var_dump($input["ArticleBorrar"]);
