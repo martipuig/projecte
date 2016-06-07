@@ -47,7 +47,7 @@
                                 <li><a href="#">Categories</a>
                                     <ul>
                                         @foreach($categorias as $categoria)
-                                            <li><a href="#">{!! $categoria->NomCat !!}</a>
+                                            <li><a href="{{ URL::to('/categoriaCompletaDetall') }}/{{$categoria->id}}">{!! $categoria->NomCat !!}</a>
                                                 <ul>
                                                     @foreach($categoriaEsps as $catEsp)
                                                         @if($categoria->id == $catEsp->categoria_id)

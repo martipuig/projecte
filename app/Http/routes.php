@@ -79,6 +79,7 @@ Route::resource('proddet', 'proddetController');
 //Ruta de Categoria detall
 
 Route::get('categoriaDetall', 'categoriaDetallController@index');
+Route::get('categoriaCompletaDetall/{idcategoria}', 'categoriaDetallController@categoriaCompleta');
 Route::resource('categoriaDetall', 'categoriaDetallController');
 
 //Ruta de contacte

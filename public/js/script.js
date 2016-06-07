@@ -139,7 +139,7 @@ if($('.llistaproductes').length) {
 					article+="<span class='input-group-btn text-center'>";
 					article+="<div class='btn-group'>";
 					article+="<a href='" + public_url + "/proddet/" + articles[i].id + "' class='btn btn-default btn-xs'><i class='glyphicon glyphicon-eye-open'></i></a>";
-					article+="<a onclick='cookieskdjhgbvkcfdhb(" + articles[i].id + ")' class='btn btn-default btn-xs'><i id='" + articles[i].id + "'class='glyphicon glyphicon-heart-empty'></i></a>";
+					article+="<a onclick='cookieskdjhgbvkcfdhb(event, " + articles[i].id + ")' class='btn btn-default btn-xs'><i id='" + articles[i].id + "'class='glyphicon glyphicon-heart-empty'></i></a>";
 					article+="</div>";
 					article+="</span>";
 					article+="</div>";

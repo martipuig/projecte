@@ -66,4 +66,25 @@ class categoriaDetallController extends AppBaseController {
         return view('categoriaDetall')->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps)->with('id', $id);
     }
 
+    public function categoriaCompleta($idcategoria)
+    {
+        $articles = \App\Models\article::where('mostrar', 'Sí')->where('categoria_id', $idcategoria)->paginate(6);
+
+        $categorias = $this->categoriaRepository->all();
+
+        $categoriaEsps = $this->categoriaEspRepository->all();
+
+        $categoria = \App\Models\categoria::where('id', $idcategoria)->first();
+
+        // foreach($articles as $article){
+        //     echo $article->NomArt . "<br>";
+        //     foreach($article->imatges as $a){
+        //         var_dump($a->name);
+        //         echo "<br>";
+        //     }
+        // }
+       return view('categoriaCompletaDetall')
+            ->with('articles', $articles)->with('categorias', $categorias)->with('categoriaEsps', $categoriaEsps)->with('categoria', $categoria);
+    }
+
 }
